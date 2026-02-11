@@ -86,117 +86,127 @@ export default function Home() {
       <Navbar />
       <SmoothScroll>
         {/* Hero Section */}
-        <section className="max-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
-          {/* Hero Content */}
-          <div className="container mx-auto px-6 py-16">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Left Content */}
-              <div data-aos="fade-right" className="space-y-8">
-                <div>
-                  <div className="inline-flex items-center gap-3 bg-yellow-50 text-yellow-400 px-5 py-2 rounded-full mb-8 shadow-xl shadow-black/10">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-                    <span className="text-[12px] font-bold uppercase tracking-widest select-none">
-                      Printing & Branding Experts
-                    </span>
+        <section className="bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container">
+            <div className="mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* LEFT CONTENT – FIXED */}
+                <div
+                  data-aos="fade-right"
+                  className="flex flex-col justify-center text-center lg:text-left space-y-5"
+                >
+                  {/* Badge */}
+                  <div className="flex justify-center lg:justify-start">
+                    <div className="inline-flex items-center gap-3 bg-pink-50 text-pink-500 px-5 py-2 rounded-full shadow-lg">
+                      <span className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
+                      <span className="text-[11px] font-bold uppercase tracking-widest">
+                        Printing & Branding Experts
+                      </span>
+                    </div>
                   </div>
 
-                  <h1 className="text-7xl md:text-8xl font-[600] text-gray-950 leading-[1] tracking-tight mb-10 select-none">
-                    Premium Printing That Builds <br />{" "}
-                    <span className="text-pink-700">Powerful Brands</span>
+                  {/* Heading */}
+                  <h1
+                    className="font-semibold text-gray-950 leading-tight tracking-tight
+    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  >
+                    Price Guarantee <br />
+                    <span className="text-pink-700">
+                      For All Of Our Services
+                    </span>
                   </h1>
 
-                  <p className="text-gray-600 text-lg max-w-xl">
+                  {/* Description */}
+                  <p className="text-gray-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
                     From business cards to large-format branding, we deliver
                     high-quality printing solutions that elevate your brand
                     identity and leave a lasting impression.
                   </p>
-                </div>
 
-                {/* Service Highlights */}
-                <div className="flex flex-wrap gap-4">
-                  <div className="bg-white text-gray-700 px-8 py-6 rounded-xl shadow-lg hover:shadow-lg transition">
-                    <div className="text-2xl font-bold">Offset</div>
-                    <div className="text-sm opacity-90">Printing</div>
-                  </div>
-
-                  <div className="bg-white text-gray-700 px-8 py-6 rounded-xl shadow-md hover:shadow-lg transition">
-                    <div className="text-2xl font-bold">Digital</div>
-                    <div className="text-sm text-gray-500">Printing</div>
-                  </div>
-
-                  <div className="bg-white text-gray-700 px-8 py-6 rounded-xl shadow-md hover:shadow-lg transition">
-                    <div className="text-2xl font-bold">Brand</div>
-                    <div className="text-sm text-gray-500">Identity</div>
+                  {/* CTA BUTTON */}
+                  <div className="flex justify-center lg:justify-start pt-4">
+                    <Link href="/contact">
+                      <button className="group inline-flex items-center gap-3 bg-pink-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300">
+                        Contact Us
+                        <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </button>
+                    </Link>
                   </div>
                 </div>
-              </div>
 
-              {/* Right Content - Image Grid */}
-              <div className="relative">
-                {/* Decorative circles */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
-                <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
-                <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
+                {/* Right Content - Image Grid */}
+                <div className="relative">
+                  {/* Decorative circles */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+                  <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
+                  <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
 
-                {/* Image grid */}
-                <div className="relative grid grid-cols-3 gap-4">
-                  <div className="col-span-1 space-y-6 mt-8 floatSoft mt-16">
-                    <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
-                      <Image
-                        src="/Section-1-About-2.jpg"
-                        alt=""
-                        fill
-                        className="object-cover"
-                      />
+                  {/* Image grid */}
+                  <div className="relative grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {/* Column 1 */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/Section-1-About-2.jpg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+
+                      {/* Hide on mobile */}
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-2 ">
+                        <Image
+                          src="/Services-3.jpeg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
 
-                    <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
-                      <Image
-                        src="/Services-3.jpeg"
-                        alt=""
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
+                    {/* Column 2 (Center) */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6">
+                      <div className="rounded-2xl aspect-square sm:aspect-[3/4] overflow-hidden relative float-2">
+                        <Image
+                          src="/Home-Hero.jpg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
 
-                  <div className="col-span-1 space-y-6">
-                    <div className="rounded-2xl aspect-[3/4] overflow-hidden relative float-2">
-                      <Image
-                        src="/Home-Hero.jpg"
-                        alt=""
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-
-                    <div className="rounded-2xl aspect-square overflow-hidden relative float-3">
-                      <Image
-                        src="/Web Design-hero.png"
-                        alt=""
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-span-1 space-y-6 mt-16">
-                    <div className="rounded-2xl aspect-square overflow-hidden relative float-3">
-                      <Image
-                        src="/Services-1.jpeg"
-                        alt=""
-                        fill
-                        className="object-cover"
-                      />
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/Web Design-hero.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
 
-                    <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
-                      <Image
-                        src="/Services-2.jpeg"
-                        alt=""
-                        fill
-                        className="object-cover"
-                      />
+                    {/* Column 3 – hidden on mobile */}
+                    <div className="col-span-1 space-y-6 sm:mt-16 hidden sm:block">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/Services-1.jpeg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                        <Image
+                          src="/Services-2.jpeg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -231,13 +241,13 @@ export default function Home() {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-[320px] object-cover rounded-xl"
+                    className="w-full h-[200px] sm:h-[300px] md:h-[320px] object-cover rounded-xl"
                   />
 
                   {/* CONTENT */}
                   <div className="mt-5 pb-3">
-                    <h2 className="text-2xl font-semibold">{item.title}</h2>
-                    <p className="text-md text-gray-600">{item.des}</p>
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">{item.title}</h2>
+                    <p className="text-sm md:text-md text-gray-600">{item.des}</p>
                   </div>
 
                   {/* ARROW BUTTON */}
