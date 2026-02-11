@@ -11,8 +11,31 @@
   padding-bottom: 0px;
 }
 
-
 html,
 body {
   overflow-x: hidden;
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.float-1 {
+  animation: floatSoft 3s ease-in-out infinite;
+}
+
+.float-2 {
+  animation: floatSoft 3s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.float-3 {
+  animation: floatSoft 3s ease-in-out infinite;
+  animation-delay: 2s;
 }

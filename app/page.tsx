@@ -86,115 +86,120 @@ export default function Home() {
       <Navbar />
       <SmoothScroll>
         {/* Hero Section */}
-        <section className="relative bg-white overflow-hidden flex items-center">
-          {/* Modern gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-white to-orange-50" />
-
-          {/* Subtle mesh gradient overlay */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,182,193,0.3),transparent_50%)]" />
-            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_40%,rgba(255,160,122,0.2),transparent_50%)]" />
-          </div>
-
-          <div className="container mx-auto lg:px-12 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* LEFT CONTENT */}
-              <div className="space-y-8 order-2 lg:order-1">
-                {/* Modern pill badge */}
-                <div className="flex justify-center lg:justify-start">
-                  <div className="inline-flex items-center gap-2 bg-pink-100 px-4 py-2 rounded-full">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-semibold text-pink-700">
+        <section className="max-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+          {/* Hero Content */}
+          <div className="container mx-auto px-6 py-16">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Left Content */}
+              <div data-aos="fade-right" className="space-y-8">
+                <div>
+                  <div className="inline-flex items-center gap-3 bg-yellow-50 text-yellow-400 px-5 py-2 rounded-full mb-8 shadow-xl shadow-black/10">
+                    <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+                    <span className="text-[12px] font-bold uppercase tracking-widest select-none">
                       Printing & Branding Experts
                     </span>
                   </div>
+
+                  <h1 className="text-7xl md:text-8xl font-[600] text-gray-950 leading-[1] tracking-tight mb-10 select-none">
+                    Premium Printing That Builds <br />{" "}
+                    <span className="text-pink-700">Powerful Brands</span>
+                  </h1>
+
+                  <p className="text-gray-600 text-lg max-w-xl">
+                    From business cards to large-format branding, we deliver
+                    high-quality printing solutions that elevate your brand
+                    identity and leave a lasting impression.
+                  </p>
                 </div>
 
-                {/* Main heading with modern typography */}
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center max-w-full lg:text-start">
-                  <span className="block text-gray-900 ">Price Guarantee</span>
-                  <span className="block mt-2 text-pink-600">
-                    for all Services
-                  </span>
-                </h1>
-
-                {/* Subheading */}
-                <p className="text-xl text-gray-600 max-w-full leading-relaxed text-center lg:text-start">
-                  We place great value on the quality of our products <br /> and
-                  guarantee excellence in every project.
-                </p>
-
-                {/* CTA with modern button */}
-
-                <div className="flex justify-center lg:justify-start pt-4">
-                  <Link href="/contact">
-                    <button className="bg-pink-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/40 transition-all duration-300 hover:-translate-y-1">
-                      Contact Us
-                    </button>
-                  </Link>
-                </div>
-
-                {/* Trust badges */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 pt-8">
-                  <div className="flex items-center gap-2">
-                    <FaCheckCircle className="text-pink-600 text-lg" />
-                    <span className="text-sm font-medium text-gray-700">
-                      Best Quality
-                    </span>
+                {/* Service Highlights */}
+                <div className="flex flex-wrap gap-4">
+                  <div className="bg-white text-gray-700 px-8 py-6 rounded-xl shadow-lg hover:shadow-lg transition">
+                    <div className="text-2xl font-bold">Offset</div>
+                    <div className="text-sm opacity-90">Printing</div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <FaCheckCircle className="text-pink-600 text-lg" />
-                    <span className="text-sm font-medium text-gray-700">
-                      Fast Delivery
-                    </span>
+                  <div className="bg-white text-gray-700 px-8 py-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div className="text-2xl font-bold">Digital</div>
+                    <div className="text-sm text-gray-500">Printing</div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <FaCheckCircle className="text-pink-600 text-lg" />
-                    <span className="text-sm font-medium text-gray-700">
-                      24/7 Support
-                    </span>
+                  <div className="bg-white text-gray-700 px-8 py-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div className="text-2xl font-bold">Brand</div>
+                    <div className="text-sm text-gray-500">Identity</div>
                   </div>
                 </div>
               </div>
 
-              {/* RIGHT IMAGE */}
-              <div className="relative order-1 lg:order-2">
-                {/* Main image with modern card design */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
-                    <img
-                      src="/Home-Hero.jpg"
-                      alt="Professional printing services"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
+              {/* Right Content - Image Grid */}
+              <div className="relative">
+                {/* Decorative circles */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+                <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
+                <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
 
-                {/* Floating card - modern minimal design */}
-                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100 max-w-xs hidden md:block">
-                  <div className="flex items-start gap-4">
-                    {/* ICON */}
-                    <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <FaCheckCircle className="text-white text-2xl" />
+                {/* Image grid */}
+                <div className="relative grid grid-cols-3 gap-4">
+                  <div className="col-span-1 space-y-6 mt-8 floatSoft mt-16">
+                    <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                      <Image
+                        src="/Section-1-About-2.jpg"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
                     </div>
 
-                    {/* TEXT */}
-                    <div>
-                      <div className="font-bold text-gray-900 text-lg">
-                        Premium Quality
-                      </div>
-                      <div className="text-gray-600 text-sm mt-1">
-                        100% Satisfaction Guaranteed
-                      </div>
+                    <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                      <Image
+                        src="/Services-3.jpeg"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-span-1 space-y-6">
+                    <div className="rounded-2xl aspect-[3/4] overflow-hidden relative float-2">
+                      <Image
+                        src="/Home-Hero.jpg"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="rounded-2xl aspect-square overflow-hidden relative float-3">
+                      <Image
+                        src="/Web Design-hero.png"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-span-1 space-y-6 mt-16">
+                    <div className="rounded-2xl aspect-square overflow-hidden relative float-3">
+                      <Image
+                        src="/Services-1.jpeg"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                      <Image
+                        src="/Services-2.jpeg"
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
                 </div>
-
-                {/* Decorative elements - minimal and modern */}
-                <div className="absolute -top-6 -right-6 w-32 h-32 border-4 border-pink-200 rounded-2xl -z-10 rotate-12" />
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-orange-200 to-pink-200 rounded-2xl -z-10 rotate-6" />
               </div>
             </div>
           </div>
@@ -426,7 +431,7 @@ export default function Home() {
                 src="/home-contact.jpeg"
                 alt="background"
                 fill
-                className="object-cover -z-10"
+                className="object-cover -z-10 opocity-50 blur-sm"
               />
               <div className="absolute inset-0 bg-black/5"></div>
 

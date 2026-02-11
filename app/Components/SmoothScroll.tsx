@@ -11,7 +11,7 @@ interface Props {
 export default function SmoothScroll({ children }: Props) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 4.0,
+      duration: 2.0,
       smoothWheel: true,
       easing: (t: number) => 1 - Math.pow(1 - t, 4),
     });
