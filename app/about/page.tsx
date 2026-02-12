@@ -76,60 +76,106 @@ export default function Page() {
       <Navbar />
       <SmoothScroll>
         {/* Section - 1 */}
-        <section className="container">
-          <div className="relative bg-white rounded-[32px] shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              {/* LEFT CONTENT */}
-              <div
-                data-aos="fade-right"
-                className=" relative z-10 bg-white border-l-4 border-pink-600 p-5 sm:p-5 md:p-5 lg:p-8 lg:ml-14 lg:-mr-24 rounded-b-[32px] lg:rounded-2xl shadow-lg order-2 lg:order-1"
-              >
-                <div className="h-1 w-14 bg-pink-600 rounded-full mb-5"></div>
+        <section className="bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container">
+            <div className="mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* LEFT CONTENT – FIXED */}
+                <div
+                  data-aos="fade-right"
+                  className="flex flex-col justify-center text-center lg:text-left space-y-5"
+                >
+                  {/* Heading */}
+                  <h1
+                    className="font-semibold text-gray-950 leading-tight tracking-tight
+    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  >
+                    About
+                    <span className="text-pink-600"> us</span>
+                  </h1>
 
-                <p className="mt-5 text-gray-600 font-bold text-4xl md:text-5xl lg:text-6xl text-center lg:text-start">
-                  About
-                  <span className="text-pink-600"> US</span>
-                </p>
+                  <p className="text-gray-600">
+                    <Link href="/" className="text-pink-600 hover:underline text-lg">
+                      Home
+                    </Link>
+                    <span className="mx-2 text-lg">&gt;</span>
+                    <Link
+                      href="/about"
+                      className="text-gray-800 hover:underline text-lg"
+                    >
+                      About us
+                    </Link>
+                  </p>
 
-                <p className="mt-5 text-gray-600 text-sm sm:text-base leading-relaxed lg:max-w-md text-center lg:text-start">
-                  Our first priority is to satisfy our customers. We value the
-                  time and money of our clients and work for their business. If
-                  you place your trust in us, you will undoubtedly be able to
-                  verify that our assertion that consumers come first is true.
-                  Our clients get to experience a hassle free, consistent, top
-                  quality, and best time saving services.
-                </p>
-              </div>
+                  {/* Description */}
+                  <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    Our first priority is to satisfy our customers. We value the
+                    time and money of our clients and work for their business.
+                    If you place your trust in us, you will undoubtedly be able
+                    to verify that our assertion that consumers come first is
+                    true. Our clients get to experience a hassle free,
+                    consistent, top quality, and best time saving services.
+                  </p>
+                </div>
 
-              {/* RIGHT IMAGE */}
-              <div
-                data-aos="fade-left"
-                className="
-              relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[560px]
-              order-1 lg:order-2
-            "
-              >
-                <Image
-                  src="/About.jpg"
-                  alt="Printing Service"
-                  fill
-                  priority
-                  className="object-cover rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none"
-                />
+                {/* Right Content - Image Grid */}
+                <div className="relative">
+                  {/* Decorative circles */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+                  <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
+                  <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
 
-                <div className="absolute inset-0 rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none bg-gradient-to-l from-black/50 to-transparent"></div>
+                  {/* Image grid */}
+                  <div className="relative grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {/* Column 1 */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/Section-1-About-2.jpg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Column 2 (Center) */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                        <Image
+                          src="/Web Design-hero.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Column 3 – hidden on mobile */}
+                    <div className="col-span-1 space-y-6 sm:mt-16 ">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/Services-1.jpeg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Section - 2 */}
-        <section className="relative overflow-hidden py-20">
+        <section className="relative overflow-hidden py-10">
           {/* Background Glow */}
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-pink-100 via-white to-green-100" />
 
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 items-center gap-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-14">
               {/* LEFT CONTENT */}
               <div
                 data-aos="fade-up"
@@ -174,12 +220,12 @@ export default function Page() {
                 <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-pink-400 to-green-400 blur-2xl opacity-30"></div>
 
                 <Image
-                  src="/Section-1-About-1.jpg"
+                  src="/Section-1-About-3.jpg"
                   alt="Printing Service"
                   width={700}
                   height={500}
                   priority
-                  className="relative w-full h-[320px] md:h-[450px] object-cover rounded-3xl shadow-2xl"
+                  className="relative w-full h-[320px] md:h-[450px] object-cover rounded-3xl"
                 />
               </div>
             </div>
@@ -189,10 +235,10 @@ export default function Page() {
         {/* Section - 3 */}
         <section className="container section-padding">
           <div className="bg-gradient-to-r from-pink-600 to-pink-700 rounded-2xl px-6 py-12 text-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto ">
               {/* Left Content */}
               <div data-aos="fade-right">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-start">
                   We Offer <br />
                   <span className="text-black hover:text-yellow-300">
                     A Low Price Guarantee
@@ -204,7 +250,7 @@ export default function Page() {
 
               {/* Right Content */}
               <div data-aos="fade-left">
-                <p className="text-base md:text-lg text-pink-100 leading-relaxed">
+                <p className="text-base md:text-lg text-pink-100 leading-relaxed text-center lg:text-start">
                   Customer loyalty is fueled by affordable prices, high quality,
                   originality, and our business practices. Every day, thousands
                   of companies and individuals rely on FBS for their printing,
@@ -295,15 +341,30 @@ export default function Page() {
               {services.map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 border-b pb-4 group hover:translate-x-2 transition-all duration-300"
+                  className="border-b pb-4 group transition-all duration-300
+                 flex justify-center"
                 >
-                  <div className="w-11 h-11 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center">
-                    {item.icon}
-                  </div>
+                  {/* INNER CONTENT */}
+                  <div
+                    className="flex items-center gap-4 w-full 
+                      group-hover:translate-x-2 transition-all duration-300"
+                  >
+                    {/* ICON */}
+                    <div
+                      className="w-11 h-11 flex-shrink-0 rounded-full bg-pink-100
+                        text-pink-600 flex items-center justify-center"
+                    >
+                      {item.icon}
+                    </div>
 
-                  <h4 className="text-lg font-semibold text-gray-800 group-hover:text-pink-600">
-                    {item.label}
-                  </h4>
+                    {/* TEXT */}
+                    <h4
+                      className="text-lg font-semibold text-gray-800
+                       group-hover:text-pink-600"
+                    >
+                      {item.label}
+                    </h4>
+                  </div>
                 </div>
               ))}
             </div>

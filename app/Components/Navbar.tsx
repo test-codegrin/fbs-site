@@ -145,11 +145,14 @@ export default function Navbar() {
         {/* DESKTOP RIGHT */}
         <div className="hidden lg:flex items-center gap-3">
           <img src="/100-percent.gif" alt="gif" className="w-24" />
-          <button className="flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-3 py-2 rounded-full rounded-tr-[100px] shadow-md transition">
+          <button className="flex items-center gap-3 bg-yellow-400 px-3 py-2 rounded-full">
             <span>BOOK A SERVICE</span>
-            <span className="flex items-center justify-center w-10 h-10 bg-pink-700 text-white rounded-full">
-              <FiArrowUpRight />
-            </span>
+
+            <Link href="/contact">
+              <span className="flex items-center justify-center w-10 h-10 bg-pink-700 text-white rounded-full cursor-pointer">
+                <FiArrowUpRight />
+              </span>
+            </Link>
           </button>
         </div>
 

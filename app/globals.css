@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
 .container {
-  padding: 60px;
   max-width: 1880px;
   margin: 0 auto;
+  padding: 60px;
+}
+@media (max-width: 640px) {
+  .container {
+    padding: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    padding: 35px;
+  }
 }
 
 .section-padding-header {

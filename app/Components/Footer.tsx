@@ -53,11 +53,16 @@ export default function Footer() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2
-              px-10 py-4 rounded-full
-              bg-gradient-to-r from-pink-500 to-green-400
-              text-white font-semibold text-lg
-              shadow-xl hover:scale-105 transition"
+            className="
+    inline-flex items-center gap-2
+    px-10 py-4 rounded-full
+    bg-white/10 backdrop-blur-md
+    border-2 border-white/80
+    text-white font-semibold text-lg
+    shadow-xl
+    hover:scale-105 hover:bg-white/20
+    transition-all duration-300
+  "
           >
             Contact Us →
           </Link>
@@ -177,7 +182,7 @@ export default function Footer() {
       </section>
 
       {/* ===== BOTTOM BAR ===== */}
-      <div className="bg-gradient-to-r from-pink-600 to-orange-500 text-white py-4">
+      <div className="bg-pink-700 text-white py-4">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-sm">
           <p>© 2026 FBS PRINTS. All rights reserved.</p>
           <Link href="/privacy" className="hover:underline">
