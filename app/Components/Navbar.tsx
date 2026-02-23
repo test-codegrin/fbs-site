@@ -83,7 +83,7 @@ export default function Navbar() {
                 {[
                   ["Printing Product", "/services/Printing-Product"],
                   ["Signage", "/services/Signage"],
-                  ["Direct Mailing", "/services/Direct-Mailing"],
+                  ["Direct Mailing", "/services/Direct-MaIilintg"],
                   ["Web Design", "/services/Web-Design"],
                   ["SEO", "/services/SEO"],
                 ].map(([label, href]) => (

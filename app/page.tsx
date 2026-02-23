@@ -246,8 +246,12 @@ export default function Home() {
 
                   {/* CONTENT */}
                   <div className="mt-5 pb-3">
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">{item.title}</h2>
-                    <p className="text-sm md:text-md text-gray-600">{item.des}</p>
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
+                      {item.title}
+                    </h2>
+                    <p className="text-sm md:text-md text-gray-600">
+                      {item.des}
+                    </p>
                   </div>
 
                   {/* ARROW BUTTON */}
@@ -304,8 +308,7 @@ export default function Home() {
           ref={countRef}
           className="container section-padding overflow-hidden"
         >
-          {" "}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
             {/* LEFT CONTENT */}
             <div data-aos="fade-right" className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl font-bold text-pink-700 leading-tight">
@@ -313,21 +316,20 @@ export default function Home() {
               </h1>
 
               <div className="pt-5 flex justify-center lg:justify-start">
-                {" "}
-                <div className="w-16 h-[3px] bg-pink-700 rounded-full"></div>{" "}
+                <div className="w-16 h-[3px] bg-pink-700 rounded-full"></div>
               </div>
 
-              <div className="space-y-5">
-                <p className="mt-6 text-gray-600 text-base sm:text-xl font-semibold max-w-6xl mx-auto">
-                  Over the years, we’ve turned countless ideas into high-quality
+              <div className="space-y-5 mt-6">
+                <p className="text-gray-600 text-base sm:text-xl font-semibold">
+                  Over the years, we&apos;ve turned countless ideas into high-quality
                   prints that leave a lasting impression. From small personal
                   projects to large corporate campaigns, our team blends
                   creativity with precision to deliver outstanding results every
                   time.
                 </p>
 
-                <p className="mt-6 text-gray-600 text-base sm:text-xl font-semibold max-w-6xl mx-auto">
-                  With decades of experience and a passion for excellence, we’ve
+                <p className="text-gray-600 text-base sm:text-xl font-semibold max-w-4xl mx-auto lg:mx-0">
+                  With decades of experience and a passion for excellence, we&apos;ve
                   completed over 150 projects for clients across industries.
                   Every design, every print, and every detail reflects our
                   commitment to quality, innovation, and customer satisfaction.
@@ -338,12 +340,12 @@ export default function Home() {
             {/* RIGHT STATS */}
             <div
               data-aos="fade-left"
-              className="relative flex justify-center lg:justify-end"
+              className="relative flex justify-center mt-10 lg:mt-0"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2  gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
                 {/* LEFT CARD */}
-                <div className="flex justify-center lg:items-center">
-                  <div className="bg-white w-52 h-52 sm:w-60 sm:h-60 rounded-2xl shadow-xl flex flex-col items-center justify-center">
+                <div className="flex justify-center items-center">
+                  <div className="bg-white w-52 h-52 sm:w-60 sm:h-60 rounded-2xl flex flex-col items-center justify-center shadow-lg">
                     <FaRocket className="text-pink-700 text-4xl mb-4" />
                     <h2 className="text-4xl font-bold text-gray-900">
                       {projects}+
@@ -355,9 +357,9 @@ export default function Home() {
                 </div>
 
                 {/* RIGHT STACK */}
-                <div className="flex flex-col gap-8 lg:gap-20 items-center">
+                <div className="flex flex-col gap-6 items-center lg:items-start">
                   {/* TOP CARD */}
-                  <div className="bg-white w-52 h-52 sm:w-60 sm:h-60 rounded-2xl shadow-xl flex flex-col items-center justify-center lg:-translate-y-5">
+                  <div className="bg-white w-52 h-52 sm:w-60 sm:h-60 rounded-2xl flex flex-col items-center justify-center shadow-lg">
                     <FaRegCalendarAlt className="text-pink-700 text-4xl mb-4" />
                     <h2 className="text-4xl font-bold text-gray-900">
                       {experience}
@@ -368,7 +370,7 @@ export default function Home() {
                   </div>
 
                   {/* BOTTOM CARD */}
-                  <div className="bg-white w-52 h-52 sm:w-60 sm:h-60 rounded-2xl shadow-xl flex flex-col items-center justify-center lg:translate-y-5">
+                  <div className="bg-white w-52 h-52 sm:w-60 sm:h-60 rounded-2xl flex flex-col items-center justify-center shadow-lg">
                     <FaWallet className="text-pink-700 text-4xl mb-4" />
                     <h2 className="text-4xl font-bold text-gray-900">
                       {funding}M
@@ -554,7 +556,7 @@ export default function Home() {
                 <div className="md:col-span-2 flex justify-center lg:justify-end">
                   <button
                     type="submit"
-                    className="rounded-full px-8 py-3 text-white font-semibold bg-pink-600 hover:scale-105 transition"
+                    className="rounded-full px-8 py-3 text- font-semibold bg-pink-700 hover:scale-105 transition"
                   >
                     Send Message
                   </button>
