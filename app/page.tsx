@@ -554,7 +554,7 @@ export default function Home() {
                 <div className="md:col-span-2 flex justify-center lg:justify-end">
                   <button
                     type="submit"
-                    className="rounded-full bg-gradient-to-r from-pink-500 to-green-400 px-8 py-3 text-white font-semibold shadow-lg hover:scale-105 transition"
+                    className="rounded-full px-8 py-3 text-white font-semibold bg-pink-600 hover:scale-105 transition"
                   >
                     Send Message
                   </button>

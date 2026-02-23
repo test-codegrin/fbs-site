@@ -5,239 +5,240 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
+import { IoIosMenu } from "react-icons/io";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [serviceOpen, setServiceOpen] = useState(false); // mobile
-  const [desktopServiceOpen, setDesktopServiceOpen] = useState(false); // desktop + responsive
-
-  /* ================= CLASSES ================= */
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const [desktopServiceOpen, setDesktopServiceOpen] = useState(false);
 
   const linkClass = (path: string) =>
-    pathname === path
-      ? "bg-gradient-to-r from-pink-500 to-green-400 text-white px-3 py-2 rounded-full"
-      : "px-3 py-2 text-black transition";
+    `relative px-3 py-2 text-black transition
+     after:content-[''] after:absolute after:right-0 after:bottom-0
+     after:h-[2px] after:w-0 after:bg-black
+     after:transition-all after:duration-300
+     hover:after:w-full hover:after:left-0
+     ${pathname === path ? "after:w-full after:left-0" : ""}`;
 
   const parentLinkClass = (path: string) =>
-    pathname.startsWith(path)
-      ? "bg-gradient-to-r from-pink-500 to-green-400 text-white px-3 py-2 rounded-full"
-      : "px-3 py-2 text-black transition";
+    `relative px-3 py-2 text-black transition
+     after:content-[''] after:absolute after:right-0 after:bottom-0
+     after:h-[2px] after:w-0 after:bg-black
+     after:transition-all after:duration-300
+     hover:after:w-full hover:after:left-0
+     ${pathname.startsWith(path) ? "after:w-full after:left-0" : ""}`;
 
   const dropdownLinkClass = (path: string) =>
     pathname === path
-      ? "block px-4 py-2 bg-gradient-to-r from-pink-500 to-green-400 text-white rounded-lg"
-      : "block px-4 py-2 text-black hover:bg-gray-100 rounded-lg";
-
-  const mobileLinkClass = (path: string) =>
-    pathname === path
-      ? "block w-full bg-gradient-to-r from-pink-700 to-green-400 text-white px-4 py-3 rounded-xl"
-      : "block w-full px-4 py-3 text-black border border-gray-200 rounded-xl";
-
-  /* ================= JSX ================= */
+      ? "block px-4 py-2"
+      : "block px-4 py-2 rounded-lg text-gray-500 transition hover:text-gray-700";
 
   return (
-    <header className="top-0 z-50 w-full shadow-md bg-white py-2">
-      <nav className="flex items-center justify-between container mx-auto section-padding-header">
-        {/* LOGO */}
-        <Image
-          src="/FBS-LOGO.png"
-          alt="FBS Logo"
-          width={160}
-          height={60}
-          priority
-          style={{ height: "75px", width: "auto" }}
-        />
+    <>
+      {/* HEADER */}
+      <header className="top-0 z-50 w-full shadow-md bg-white">
+        <nav className="flex items-center justify-between container section-padding-header">
+          {/* LOGO */}
+          <Image
+            src="/FBS-LOGO.png"
+            alt="FBS Logo"
+            width={160}
+            height={60}
+            priority
+            style={{ height: "70px", width: "auto" }}
+          />
 
-        {/* DESKTOP MENU */}
-        <ul className="hidden lg:flex items-center gap-2 text-md font-medium">
-          <li>
-            <Link href="/" className={linkClass("/")}>
-              Home
-            </Link>
-          </li>
+          {/* DESKTOP MENU */}
+          <ul className="hidden md:flex items-center gap-2 text-xl font-medium">
+            <li>
+              <Link href="/" className={linkClass("/")}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className={linkClass("/about")}>
+                About Us
+              </Link>
+            </li>
 
-          <li>
-            <Link href="/about" className={linkClass("/about")}>
-              About Us
-            </Link>
-          </li>
-
-          {/* SERVICES (FIXED) */}
-          <li
-            className="relative"
-            onMouseEnter={() => setDesktopServiceOpen(true)}
-            onMouseLeave={() => setDesktopServiceOpen(false)}
-          >
-            <button
-              onClick={() => setDesktopServiceOpen(!desktopServiceOpen)}
-              className={`${parentLinkClass(
-                "/services",
-              )} flex items-center gap-1 cursor-pointer`}
+            {/* SERVICES DROPDOWN */}
+            <li
+              className="relative"
+              onMouseEnter={() => setDesktopServiceOpen(true)}
+              onMouseLeave={() => setDesktopServiceOpen(false)}
             >
-              Services ▾
+              <button
+                className={`${parentLinkClass("/services")} flex items-center gap-1`}
+              >
+                Services ▾
+              </button>
+
+              <ul
+                className={`absolute top-12 left-0 w-52 bg-white shadow-xl rounded-xl py-3 transition-all duration-300 z-50
+                ${desktopServiceOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
+              >
+                {[
+                  ["Printing Product", "/services/Printing-Product"],
+                  ["Signage", "/services/Signage"],
+                  ["Direct Mailing", "/services/Direct-Mailing"],
+                  ["Web Design", "/services/Web-Design"],
+                  ["SEO", "/services/SEO"],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link href={href} className={dropdownLinkClass(href)}>
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            <li>
+              <Link href="/contact" className={linkClass("/contact")}>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+
+          {/* DESKTOP RIGHT */}
+          <div className="hidden lg:flex items-center gap-3">
+            <img src="/100-percent.gif" alt="gif" className="w-24" />
+            <button className="flex items-center gap-3 bg-yellow-400 px-3 py-2 rounded-full">
+              <span className="font-semibold">BOOK A SERVICE</span>
+              <Link href="/contact">
+                <span className="flex items-center justify-center w-10 h-10 bg-pink-700 text-white rounded-full">
+                  <FiArrowUpRight />
+                </span>
+              </Link>
             </button>
+          </div>
 
-            <ul
-              className={`absolute top-12 left-0 w-52 bg-white shadow-xl rounded-xl py-3 transition-all duration-300 z-50
-              ${
-                desktopServiceOpen
-                  ? "opacity-100 visible translate-y-0"
-                  : "opacity-0 invisible translate-y-2"
-              }`}
-            >
-              <li>
-                <Link
-                  href="/services/Printing-Product"
-                  className={dropdownLinkClass("/services/Printing-Product")}
-                >
-                  Printing Product
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/Signage"
-                  className={dropdownLinkClass("/services/Signage")}
-                >
-                  Signage
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/Direct-MaIilintg"
-                  className={dropdownLinkClass("/services/Direct-Mailing")}
-                >
-                  Direct Mailing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/Web-Design"
-                  className={dropdownLinkClass("/services/Web-Design")}
-                >
-                  Web Design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/SEO"
-                  className={dropdownLinkClass("/services/SEO")}
-                >
-                  SEO
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* MOBILE MENU BUTTON */}
+          <button
+            className={`md:hidden z-[10] transition-opacity duration-300
+            ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <IoIosMenu size={34} className="text-black" />
+          </button>
+        </nav>
+      </header>
 
-          <li>
-            <Link href="/know-you" className={linkClass("/know-you")}>
-              Know Your Sign
-            </Link>
-          </li>
+      {/* OVERLAY */}
+      <div
+        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-500 md:hidden
+        ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        onClick={() => setMenuOpen(false)}
+      />
 
-          <li>
-            <Link href="/contact" className={linkClass("/contact")}>
-              Contact Us
-            </Link>
-          </li>
-        </ul>
-
-        {/* DESKTOP RIGHT */}
-        <div className="hidden lg:flex items-center gap-3">
-          <img src="/100-percent.gif" alt="gif" className="w-24" />
-          <button className="flex items-center gap-3 bg-yellow-400 px-3 py-2 rounded-full">
-            <span>BOOK A SERVICE</span>
-
-            <Link href="/contact">
-              <span className="flex items-center justify-center w-10 h-10 bg-pink-700 text-white rounded-full cursor-pointer">
-                <FiArrowUpRight />
-              </span>
-            </Link>
+      {/* MOBILE SLIDE MENU */}
+      <div
+        className={`fixed top-0 left-0 h-dvh w-[75%] max-w-[340px]
+        bg-white z-50 transform transition-transform duration-500
+        ${menuOpen ? "translate-x-0" : "-translate-x-full"}
+        md:hidden flex flex-col`}
+      >
+        {/* CLOSE BUTTON */}
+        <div className="flex items-center justify-between px-8 pt-8 pb-3">
+          <span className="text-black text-sm tracking-[0.1em] uppercase">
+            Menu
+          </span>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-black/10 hover:bg-white/20 transition"
+            aria-label="Close menu"
+          >
+            <IoClose size={25} className="text-black" />
           </button>
         </div>
 
-        {/* MOBILE TOGGLE */}
-        <button
-          className="lg:hidden text-3xl"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
-      </nav>
+        {/* NAV LINKS */}
+        <nav className="flex-1 px-8 pt-4">
+          <ul className="space-y-1">
+            {[
+              ["HOME", "/"],
+              ["ABOUT US", "/about"],
+              ["CONTACT", "/contact"],
+            ].map(([label, href]) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-2 text-black text-xl tracking-[0.10em]"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
 
-      {/* MOBILE MENU */}
-      {menuOpen && (
-        <div className="lg:hidden bg-white px-8 py-4 space-y-3">
-          <Link
-            href="/"
-            className={mobileLinkClass("/")}
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </Link>
+            {/* SERVICES ACCORDION */}
+            <li className="border-b border-black/[0.06] pb-10">
+              <button
+                onClick={() => setServiceOpen(!serviceOpen)}
+                className="w-full flex items-center justify-between py-2 text-black text-xl tracking-[0.10em]"
+              >
+                SERVICES
+                <span
+                  className={`transition-transform ${serviceOpen ? "rotate-180" : ""} text-2xl flex items-center justify-center`}
+                >
+                  ▾
+                </span>
+              </button>
 
-          <Link
-            href="/about"
-            className={mobileLinkClass("/about")}
-            onClick={() => setMenuOpen(false)}
-          >
-            About Us
-          </Link>
-
-          {/* MOBILE SERVICES */}
-          <div>
-            <button
-              onClick={() => setServiceOpen(!serviceOpen)}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl font-semibold flex justify-between"
-            >
-              Services ▾
-            </button>
-
-            {serviceOpen && (
-              <div className="mt-2 space-y-2 pl-4">
-                <Link
-                  href="/services/Printing-Product"
-                  className="block px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  Printing Product
-                </Link>
-                <Link
-                  href="/services/Signage"
-                  className="block px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  Signage
-                </Link>
-                <Link
-                  href="/services/Direct-MaIilintg"
-                  className="block px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  Direct Mailing
-                </Link>
-                <Link
-                  href="/services/Web-Design"
-                  className="block px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  Web Design
-                </Link>
-                <Link
-                  href="/services/SEO"
-                  className="block px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  SEO
-                </Link>
+              <div
+                className={`overflow-hidden transition-all ${serviceOpen ? "max-h-72 pb-3" : "max-h-0"}`}
+              >
+                {[
+                  ["Printing Product", "/services/Printing-Product"],
+                  ["Signage", "/services/Signage"],
+                  ["Direct Mailing", "/services/Direct-Mailing"],
+                  ["Web Design", "/services/Web-Design"],
+                  ["SEO", "/services/SEO"],
+                ].map(([label, href]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block pl-4 py-2 text-black hover:text-white text-md uppercase"
+                  >
+                    – {label}
+                  </Link>
+                ))}
               </div>
-            )}
+            </li>
+          </ul>
+          <div className="py-10 space-y-4 justify-end items-end">
+            <div className="flex items-center gap-2">
+              <p>
+                <FaEnvelope />
+              </p>
+              <p className="block text-black hover:text-white/70 text-md tracking-wide transition-colors duration-200">
+                info@fbsprint.com
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <p>
+                <FaPhoneAlt />
+              </p>
+              <p className="block  text-black hover:text-white/70 text-md tracking-wide transition-colors duration-200">
+                +1-855-222-1133
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <p>
+                <FaMapMarkerAlt />
+              </p>
+              <p className="block  text-black hover:text-white/70 text-md tracking-wide transition-colors duration-200">
+                Illinois, USA
+              </p>
+            </div>
           </div>
-
-          <Link href="/know-you" className={mobileLinkClass("/know-you")}>
-            Know Your Sign
-          </Link>
-
-          <Link href="/contact" className={mobileLinkClass("/contact")}>
-            Contact Us
-          </Link>
-        </div>
-      )}
-    </header>
+        </nav>
+      </div>
+    </>
   );
 }

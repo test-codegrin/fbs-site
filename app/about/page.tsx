@@ -9,7 +9,6 @@ import "aos/dist/aos.css";
 import SmoothScroll from "@/app/Components/SmoothScroll";
 import Slider from "../Components/Slider";
 import PageLoader from "../Components/Preloader";
-// import { FaUser, FaRunning, FaHome, FaThumbsUp } from "react-icons/fa";
 import {
   FaPrint,
   FaSign,
@@ -172,7 +171,7 @@ export default function Page() {
         {/* Section - 2 */}
         <section className="relative overflow-hidden py-10">
           {/* Background Glow */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-pink-100 via-white to-green-100" />
+          <div className="absolute inset-0 -z-10 " />
 
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-14">
@@ -180,7 +179,7 @@ export default function Page() {
               <div
                 data-aos="fade-up"
                 className="space-y-6 text-center lg:text-left"
-              >
+              >          
                 {/* Badge */}
                 <span className="inline-block rounded-full bg-pink-100 px-4 py-1 text-sm font-semibold text-pink-600">
                   About FBS Printing
@@ -188,7 +187,7 @@ export default function Page() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
                   Printing that’s
-                  <span className="bg-gradient-to-r from-pink-500 to-green-500 bg-clip-text text-transparent">
+                  <span className="text-pink-600">
                     {" "}
                     fast, bold & reliable
                   </span>
@@ -207,7 +206,7 @@ export default function Page() {
                 <div className="pt-6">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-green-400 px-8 py-3 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+                    className="inline-flex items-center gap-2 rounded-full bg-pink-600 px-8 py-3 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
                   >
                     Contact Us
                     <span>→</span>
@@ -225,7 +224,7 @@ export default function Page() {
                   width={700}
                   height={500}
                   priority
-                  className="relative w-full h-[320px] md:h-[450px] object-cover rounded-3xl"
+                  className="relative w-full rounded-tr h-[320px] md:h-[450px] object-cover rounded-3xl"
                 />
               </div>
             </div>
