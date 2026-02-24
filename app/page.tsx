@@ -306,9 +306,9 @@ export default function Home() {
         {/* Section - 4 */}
         <section
           ref={countRef}
-          className=" containersection-padding overflow-hidden"
+          className=" container section-padding overflow-hidden"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center  max-w-[85rem] mx-auto">
             {/* LEFT CONTENT */}
             <div data-aos="fade-right" className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl font-bold text-pink-700 leading-tight">
