@@ -72,10 +72,10 @@ export default function Navbar() {
             >
               <button
                 className={`${parentLinkClass("/services")} flex items-center gap-1`}
+                onClick={() => setDesktopServiceOpen(!desktopServiceOpen)}
               >
                 Services ▾
               </button>
-
               <ul
                 className={`absolute top-12 left-0 w-52 bg-white shadow-xl rounded-xl py-3 transition-all duration-300 z-50
                 ${desktopServiceOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
@@ -195,7 +195,7 @@ export default function Navbar() {
                 {[
                   ["Printing Product", "/services/Printing-Product"],
                   ["Signage", "/services/Signage"],
-                  ["Direct Mailing", "/services/Direct-Mailing"],
+                  ["Direct Mailing", "/services/Direct-MaIilintg"],
                   ["Web Design", "/services/Web-Design"],
                   ["SEO", "/services/SEO"],
                 ].map(([label, href]) => (

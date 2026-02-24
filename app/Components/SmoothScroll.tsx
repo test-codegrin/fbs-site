@@ -10,8 +10,11 @@ interface Props {
 
 export default function SmoothScroll({ children }: Props) {
   useEffect(() => {
+    // 🚫 Disable Lenis on touch devices (FIXES the crash)
+    if ("ontouchstart" in window) return;
+
     const lenis = new Lenis({
-      duration: 2.0,
+      duration: 2,
       smoothWheel: true,
       easing: (t: number) => 1 - Math.pow(1 - t, 4),
     });

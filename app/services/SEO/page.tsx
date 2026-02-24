@@ -6,6 +6,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import SmoothScroll from "@/app/Components/SmoothScroll";
+import Link from "next/link";
+
 import {
   Search,
   Settings,
@@ -101,40 +103,87 @@ export default function Page() {
       <Navbar />
       <SmoothScroll>
         {/* Section - 1 */}
-        <section className="container">
-          <div className="relative bg-white rounded-[32px] shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              {/* LEFT CONTENT */}
-              <div
-                data-aos="fade-right"
-                className=" relative z-10 bg-white border-l-4 border-pink-600 p-5 sm:p-5 md:p-5 lg:p-8 lg:ml-14 lg:-mr-24 rounded-b-[32px] lg:rounded-2xl shadow-lg order-2 lg:order-1"
-              >
-                <div className="h-1 w-14 bg-pink-600 rounded-full mb-5"></div>
+        <section className="bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container">
+            <div className="mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* LEFT CONTENT – FIXED */}
+                <div
+                  data-aos="fade-right"
+                  className="flex flex-col justify-center text-center lg:text-left space-y-5"
+                >
+                  {/* Heading */}
+                  <h1
+                    className="font-semibold text-gray-950 leading-tight tracking-tight
+    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  >
+                    SEO
+                  </h1>
 
-                <p className="mt-5 text-gray-600 font-bold text-4xl md:text-5xl lg:text-6xl text-center lg:text-start">
-                  SEO
-                </p>
+                  <p className="text-gray-600 text-lg">
+                    <Link href="/" className="text-pink-600 hover:underline">
+                      Home
+                    </Link>
+                    <span className="mx-2">&gt;</span>
+                    <Link href="" className="text-pink-600">
+                      Services
+                    </Link>
+                    <span className="mx-2">&gt;</span>
+                    <span className="text-gray-800 font-semibold">SEO</span>
+                  </p>
+                  {/* Description */}
+                  <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    At FBS, we are not just another SEO agency, we are your
+                    dedicated partner in achieving online success.
+                  </p>
+                </div>
 
-                <p className="mt-5 text-gray-600 text-sm sm:text-base leading-relaxed lg:max-w-md text-center lg:text-start">
-                  At FBS, we are not just another SEO agency, we are your
-                  dedicated partner in achieving online success.
-                </p>
-              </div>
+                {/* Right Content - Image Grid */}
+                <div className="relative">
+                  {/* Decorative circles */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+                  <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
+                  <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
 
-              {/* RIGHT IMAGE */}
-              <div
-                data-aos="fade-left"
-                className="relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[560px] order-1 lg:order-2"
-              >
-                <Image
-                  src="/seo-service.jpeg"
-                  alt="Printing Service"
-                  fill
-                  priority
-                  className="object-cover rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none"
-                />
+                  {/* Image grid */}
+                  <div className="relative grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {/* Column 1 */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/direct mail marketing.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
 
-                <div className="absolute inset-0 rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none bg-gradient-to-l from-black/50 to-transparent"></div>
+                    {/* Column 2 (Center) */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                        <Image
+                          src="/Services-2.jpeg"
+                          alt=""
+                          fill
+                          className="object-fix"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Column 3 – hidden on mobile */}
+                    <div className="col-span-1 space-y-6 sm:mt-16 ">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/Section-1-About-2.jpg"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -146,7 +195,7 @@ export default function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
               {/* Left Content */}
               <div data-aos="fade-right">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-start">
                   Your Partner in
                   <br />
                   <span className="text-black hover:text-yellow-300">SEO</span>
@@ -157,7 +206,7 @@ export default function Page() {
 
               {/* Right Content */}
               <div data-aos="fade-left">
-                <p className="text-base md:text-lg text-pink-100 leading-relaxed">
+                <p className="text-base md:text-lg text-pink-100 leading-relaxed text-center lg:text-start">
                   Having a beautiful website isn’t enough if no one can find it.
                   That’s where our Search Engine Optimization (SEO) services
                   come in. At FBS Prints, we help your business climb the search
@@ -172,45 +221,47 @@ export default function Page() {
         </section>
 
         {/* Section - 3 */}
-        <section className="container section-padding mx-auto">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Heading */}
-          <div className="text-center max-w-3xl mx-auto mb-5">
-            <h2 className="text-5xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
               Our <span className="text-pink-600">SEO Services</span>
             </h2>
-            <p className="mt-6 text-xl text-gray-600 font-medium">
+
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-600 font-medium">
               Don’t be afraid to give up the good to go for the great
             </p>
           </div>
 
           {/* Services */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {steps.map((item, i) => (
               <div
                 key={i}
-                className="group rounded-2xl p-6  hover:shadow-2xl transition duration-300 flex flex-col h-full"
+                className="group rounded-2xl p-6 bg-white hover:shadow-xl transition duration-300 flex flex-col h-full"
               >
-                <div className="flex items-center gap-4 mb-6">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-5">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-110">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-110">
                     <img
-                      src={item.image} // your image URL
-                      alt={item.title} // accessible alt text
-                      className="w-10 h-10 object-contain"
-                    />{" "}
+                      src={item.image}
+                      alt={item.title}
+                      className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                    />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-pink-600 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 group-hover:text-pink-600 transition-colors">
                     {item.title}
                   </h3>
                 </div>
 
                 {/* Accent line */}
-                <div className="w-12 h-[3px] bg-pink-500 mb-4 transition-all duration-300 group-hover:w-16"></div>
+                <div className="w-10 h-[3px] bg-pink-500 mb-4 transition-all duration-300 group-hover:w-16"></div>
 
                 {/* Description */}
-                <p className="text-gray-600 text-lg leading-relaxed mt-auto">
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mt-auto">
                   {item.desc}
                 </p>
               </div>
@@ -255,7 +306,7 @@ export default function Page() {
         {/* Section - 5 */}
         <section className="container section-padding">
           <div>
-            <h1 className="text-center text-5xl font-bold text-pink-700">
+            <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-pink-700">
               Do not wait – start your SEO journey with FBS PRINTING now!
             </h1>
           </div>

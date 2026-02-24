@@ -58,13 +58,13 @@ export default function Home() {
       img: "/Services-2.jpeg",
       title: "DIRECT MAILING",
       des: "MARKETING",
-      href: "/services/Signage",
+      href: "/services/Direct-MaIilintg",
     },
     {
       img: "/Services-3.jpeg",
       title: "SIGNAGE PRINTING",
       des: "ViSIBLE YOUR BUSINESS",
-      href: "/services/Direct-MaIilintg",
+      href: "/services/Signage",
     },
     {
       img: "/Services-4.jpeg",
@@ -306,9 +306,9 @@ export default function Home() {
         {/* Section - 4 */}
         <section
           ref={countRef}
-          className="container section-padding overflow-hidden"
+          className=" section-padding overflow-hidden"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl container mx-auto">
             {/* LEFT CONTENT */}
             <div data-aos="fade-right" className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl font-bold text-pink-700 leading-tight">
@@ -321,18 +321,19 @@ export default function Home() {
 
               <div className="space-y-5 mt-6">
                 <p className="text-gray-600 text-base sm:text-xl font-semibold">
-                  Over the years, we&apos;ve turned countless ideas into high-quality
-                  prints that leave a lasting impression. From small personal
-                  projects to large corporate campaigns, our team blends
-                  creativity with precision to deliver outstanding results every
-                  time.
+                  Over the years, we&apos;ve turned countless ideas into
+                  high-quality prints that leave a lasting impression. From
+                  small personal projects to large corporate campaigns, our team
+                  blends creativity with precision to deliver outstanding
+                  results every time.
                 </p>
 
                 <p className="text-gray-600 text-base sm:text-xl font-semibold max-w-4xl mx-auto lg:mx-0">
-                  With decades of experience and a passion for excellence, we&apos;ve
-                  completed over 150 projects for clients across industries.
-                  Every design, every print, and every detail reflects our
-                  commitment to quality, innovation, and customer satisfaction.
+                  With decades of experience and a passion for excellence,
+                  we&apos;ve completed over 150 projects for clients across
+                  industries. Every design, every print, and every detail
+                  reflects our commitment to quality, innovation, and customer
+                  satisfaction.
                 </p>
               </div>
             </div>
@@ -396,8 +397,8 @@ export default function Home() {
 
               <h2
                 className="
-          uppercase font-bold text-pink-700
-          text-4xl sm:text-6xl md:text-7xl
+          uppercase font-bold text-pink-700 text-3xl
+          sm:text-4xl md:text-6xl lg:text-7xl
           pt-3 leading-tight
         "
               >
@@ -556,7 +557,7 @@ export default function Home() {
                 <div className="md:col-span-2 flex justify-center lg:justify-end">
                   <button
                     type="submit"
-                    className="rounded-full px-8 py-3 text- font-semibold bg-pink-700 hover:scale-105 transition"
+                    className="rounded-full px-8 py-3 text-white font-semibold bg-pink-700 hover:scale-105 transition"
                   >
                     Send Message
                   </button>

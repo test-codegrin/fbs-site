@@ -50,7 +50,7 @@ export default function Slider() {
   return (
     <div data-aos="fade-up" className="container section-padding w-full overflow-hidden">
       <div>
-        <h1 className="text-5xl font-bold text-center text-pink-700">Trusted  <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">by Leading</span> Brands</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-pink-700">Trusted  <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">by Leading</span> Brands</h1>
       <div
         ref={sliderRef}
         className="flex gap-40 overflow-x-hidden whitespace-nowrap pt-10"

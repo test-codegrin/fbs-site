@@ -170,7 +170,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/Printing-2.png"
+                          src="/Hotels-menu.png"
                           alt=""
                           fill
                           className="object-fix"
@@ -182,7 +182,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-6 sm:mt-16 ">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/printing-hero-3.jpg"
+                          src="/custom calendar.png"
                           alt=""
                           fill
                           className="object-cover"
@@ -202,7 +202,7 @@ export default function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
               {/* Left Content */}
               <div data-aos="fade-right">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-start">
                   Get your
                   <br />
                   <span className="text-black hover:text-yellow-300">
@@ -215,7 +215,7 @@ export default function Page() {
 
               {/* Right Content */}
               <div data-aos="fade-left">
-                <p className="text-base md:text-lg text-pink-100 leading-relaxed">
+                <p className="text-base md:text-lg text-pink-100 leading-relaxed text-center lg:text-start">
                   We offer a complete range of printing solutions to meet every
                   need – from business cards, brochures, and banners to t-shirt
                   prints, calendars, and custom canvas. Whether it’s carryout

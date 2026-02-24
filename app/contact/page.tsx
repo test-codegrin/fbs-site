@@ -55,39 +55,92 @@ export default function Page() {
       <Navbar />
       <SmoothScroll>
         {/* Section - 1 */}
-        <section className="container">
-          <div className="relative bg-white rounded-[32px] shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              <div
-                data-aos="fade-right"
-                className="relative z-10 bg-white border-l-4 border-pink-600 p-5 lg:p-8 lg:ml-14 lg:-mr-24 rounded-b-[32px] lg:rounded-2xl shadow-lg order-2 lg:order-1"
-              >
-                <div className="h-1 w-14 bg-pink-600 rounded-full mb-5"></div>
+        <section className="bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container">
+            <div className="mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* LEFT CONTENT – FIXED */}
+                <div
+                  data-aos="fade-right"
+                  className="flex flex-col justify-center text-center lg:text-left space-y-5"
+                >
+                  {/* Heading */}
+                  <h1
+                    className="font-semibold text-gray-950 leading-tight tracking-tight
+    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  >
+                    Contact
+                    <span className="text-pink-700"> US</span>
+                  </h1>
+                  <p className="text-gray-600">
+                    <Link
+                      href="/"
+                      className="text-pink-600 hover:underline text-lg"
+                    >
+                      Home
+                    </Link>
+                    <span className="mx-2 text-lg">&gt;</span>
+                    <Link
+                      href="/about"
+                      className="text-gray-800 hover:underline text-lg"
+                    >
+                      Contact US
+                    </Link>
+                  </p>
+                  {/* Description */}
+                  <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    Feel free to get in touch with us using the contact form
+                    provided below. We will reply to your inquiry as quickly as
+                    possible.
+                  </p>
+                </div>
 
-                <p className="mt-5 text-gray-600 font-bold text-4xl md:text-5xl lg:text-6xl text-center lg:text-start">
-                  Contact
-                  <span className="text-pink-700"> US</span>
-                </p>
+                {/* Right Content - Image Grid */}
+                <div className="relative">
+                  {/* Decorative circles */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+                  <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
+                  <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
 
-                <p className="mt-5 text-gray-600 text-sm sm:text-base leading-relaxed lg:max-w-md text-center lg:text-start">
-                  Feel free to get in touch with us using the contact form
-                  provided below. We will reply to your inquiry as quickly as
-                  possible.
-                </p>
-              </div>
+                  {/* Image grid */}
+                  <div className="relative grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {/* Column 1 */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/business-communication-office.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
 
-              <div
-                data-aos="fade-left"
-                className="relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[560px] order-1 lg:order-2"
-              >
-                <Image
-                  src="/Conatct.jpeg"
-                  alt="Printing Service"
-                  fill
-                  priority
-                  className="object-cover rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none"></div>
+                    {/* Column 2 (Center) */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                        <Image
+                          src="/Conatct.jpeg"
+                          alt=""
+                          fill
+                          className="object-fix"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Column 3 – hidden on mobile */}
+                    <div className="col-span-1 space-y-6 sm:mt-16 ">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/customer support team.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -202,7 +255,7 @@ export default function Page() {
                   By filling this form, you have read, understood and agreed to
                   Terms and Condition&apos;s and Privacy Policy
                 </p>
-                <button className="w-full py-4 rounded-full bg-gradient-to-r from-pink-600 to-green-400 text-white font-bold text-lg hover:scale-105 transition-transform">
+                <button className="w-full py-4 rounded-full bg-pink-600 text-white font-bold text-lg hover:scale-105 transition-transform">
                   Send Message
                 </button>
               </form>
@@ -211,13 +264,13 @@ export default function Page() {
         </section>
 
         {/* Section - 3 */}
-        <section className="container section-padding mx-auto">
+        <section className=" section-padding mx-auto">
           <Image
             src="/globe.png"
             alt="Logo"
             width={1500}
             height={500}
-            className="w-full h-150"
+            className="w-full h-auto"
           />
         </section>
 

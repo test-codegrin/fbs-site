@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import SmoothScroll from "@/app/Components/SmoothScroll";
 
 import PageLoader from "../../Components/Preloader";
+import Link from "next/link";
 
 export default function Page() {
   const [loaderDone, setLoaderDone] = useState(false);
@@ -76,46 +77,93 @@ export default function Page() {
       <Navbar />
       <SmoothScroll>
         {/* Section - 1 */}
-        <section className="container">
-          <div className="relative bg-white rounded-[32px] shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              {/* LEFT CONTENT */}
-              <div
-                data-aos="fade-right"
-                className=" relative z-10 bg-white border-l-4 border-pink-600 p-5 sm:p-5 md:p-5 lg:p-8 lg:ml-14 lg:-mr-24 rounded-b-[32px] lg:rounded-2xl shadow-lg order-2 lg:order-1"
-              >
-                <div className="h-1 w-14 bg-pink-600 rounded-full mb-5"></div>
+        <section className="bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container">
+            <div className="mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* LEFT CONTENT – FIXED */}
+                <div
+                  data-aos="fade-right"
+                  className="flex flex-col justify-center text-center lg:text-left space-y-5"
+                >
+                  {/* Heading */}
+                  <h1
+                    className="font-semibold text-gray-950 leading-tight tracking-tight
+    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  >
+                    Direct
+                    <span className="text-pink-600"> Mailing</span>
+                  </h1>
 
-                <p className="mt-5 text-gray-600 font-bold text-4xl md:text-5xl lg:text-6xl text-center lg:text-start">
-                  Direct <span className="text-pink-700">Mailing</span>
-                </p>
+                  <p className="text-gray-600 text-lg">
+                    <Link href="/" className="text-pink-600 hover:underline">
+                      Home
+                    </Link>
+                    <span className="mx-2">&gt;</span>
+                    <Link href="" className="text-pink-600">
+                      Services
+                    </Link>
+                    <span className="mx-2">&gt;</span>
+                    <span className="text-gray-800 font-semibold">
+                      Direct Mailing
+                    </span>
+                  </p>
+                  {/* Description */}
+                  <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    Reach your audience faster with our professional direct
+                    mailing services. From designing and printing to addressing
+                    and delivery, we handle the entire process to ensure your
+                    message lands directly in the hands of your customers - on
+                    time, every time.
+                  </p>
+                </div>
 
-                <p className="mt-5 text-gray-600 text-sm sm:text-base leading-relaxed lg:max-w-md text-center lg:text-start">
-                  Reach your audience faster with our professional direct
-                  mailing services. From designing and printing to addressing
-                  and delivery, we handle the entire process to ensure your
-                  message lands directly in the hands of your customers - on
-                  time, every time.
-                </p>
-              </div>
+                {/* Right Content - Image Grid */}
+                <div className="relative">
+                  {/* Decorative circles */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+                  <div className="absolute bottom-20 -left-10 w-60 h-60 bg-pink-100 rounded-full opacity-50 blur-3xl"></div>
+                  <div className="absolute top-32 right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
 
-              {/* RIGHT IMAGE */}
-              <div
-                data-aos="fade-left"
-                className="
-                      relative h-[300px] sm:h-[400px] md:h-[480px] lg:h-[560px]
-                      order-1 lg:order-2
-                    "
-              >
-                <Image
-                  src="/Section-1-About-2.jpg"
-                  alt="Printing Service"
-                  fill
-                  priority
-                  className="object-cover rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none"
-                />
+                  {/* Image grid */}
+                  <div className="relative grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {/* Column 1 */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/direct mail marketing.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
 
-                <div className="absolute inset-0 rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none bg-gradient-to-l from-black/50 to-transparent"></div>
+                    {/* Column 2 (Center) */}
+                    <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
+                        <Image
+                          src="/mailing documentation.png"
+                          alt=""
+                          fill
+                          className="object-fix"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Column 3 – hidden on mobile */}
+                    <div className="col-span-1 space-y-6 sm:mt-16 ">
+                      <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
+                        <Image
+                          src="/print design.png"
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -127,7 +175,7 @@ export default function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
               {/* Left Content */}
               <div data-aos="fade-right">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-start">
                   Design, Printed & Mailed
                   <br />
                   <span className="text-black hover:text-yellow-300">
@@ -138,7 +186,7 @@ export default function Page() {
 
               {/* Right Content */}
               <div data-aos="fade-left">
-                <p className="text-base md:text-lg text-pink-100 leading-relaxed">
+                <p className="text-base md:text-lg text-pink-100 leading-relaxed text-center lg:text-start">
                   Our clients appreciate the fact that we handle every aspect of
                   their print and direct mail marketing campaigns under one
                   roof. We provide direct mailing assistance with a focus on
@@ -179,7 +227,7 @@ export default function Page() {
                   alt="Design & Print"
                   width={300}
                   height={200}
-                  className="rounded-xl mt-4 object-cover"
+                  className="rounded-xl mt-4 object-cover justify-self-center lg:justify-self-start"
                 />
               </div>
 
@@ -205,7 +253,7 @@ export default function Page() {
                     alt="Full Service"
                     width={300}
                     height={200}
-                    className="w-full h-50 object-cover"
+                    className="w-full h-50 object-cover "
                   />
 
                   {/* Content overlay */}
@@ -224,7 +272,7 @@ export default function Page() {
                             alt=""
                             width={20}
                             height={20}
-                            className="w-8 h-8 object-cover"
+                            className="w-8 h-8 object-cover "
                           />
                           <p className="text-md font-medium text-gray-800">
                             {item.description || "Description"}
@@ -250,7 +298,7 @@ export default function Page() {
                   alt="Full Service"
                   width={300}
                   height={200}
-                  className="rounded-xl mt-4 object-cover"
+                  className="rounded-xl mt-4 object-cover justify-self-center lg:justify-self-start"
                 />
               </div>
             </div>

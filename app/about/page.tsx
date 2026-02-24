@@ -224,7 +224,7 @@ export default function Page() {
                   width={700}
                   height={500}
                   priority
-                  className="relative w-full rounded-tr h-[320px] md:h-[450px] object-cover rounded-3xl"
+                  className="relative w-full h-[320px] md:h-[450px] object-cover rounded-3xl"
                 />
               </div>
             </div>
