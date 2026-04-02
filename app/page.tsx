@@ -26,10 +26,20 @@ import { FaWallet } from "react-icons/fa";
 import PageLoader from "./Components/Preloader";
 import { useCountUpOnView } from "./hooks/useCountUpOnView";
 import { getRouteSchemas } from "@/app/lib/seo";
+import Web3ContactForm, {
+  type SubmissionState,
+} from "./Components/Web3ContactForm";
+import FloatingToast from "./Components/FloatingToast";
 
 export default function Home() {
   /* ---------------- LOADER ---------------- */
   const [loaderDone, setLoaderDone] = useState(false);
+  const [toastState, setToastState] = useState<SubmissionState>({
+    type: "idle",
+    message: "",
+  });
+  const [showToast, setShowToast] = useState(false);
+  const toastTimerRef = useRef<number | null>(null);
 
   /* ---------------- COUNT REF ---------------- */
 
@@ -41,6 +51,32 @@ export default function Home() {
       offset: 100,
     });
   }, []);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current !== null) {
+        window.clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
+  function handleSubmissionStateChange(state: SubmissionState) {
+    setToastState(state);
+
+    if (toastTimerRef.current !== null) {
+      window.clearTimeout(toastTimerRef.current);
+    }
+
+    if (state.type === "idle") {
+      setShowToast(false);
+      return;
+    }
+
+    setShowToast(true);
+    toastTimerRef.current = window.setTimeout(() => {
+      setShowToast(false);
+    }, 3500);
+  }
 
   const countRef = useRef<HTMLDivElement>(null);
 
@@ -86,6 +122,7 @@ export default function Home() {
   return (
     <>
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
+      <FloatingToast submissionState={toastState} visible={showToast} />
       {homeSchemas.map((schema, index) => (
         <Script
           key={`home-schema-${index}`}
@@ -501,84 +538,10 @@ export default function Home() {
               </div>
 
               {/* Form */}
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="text-sm font-medium text-gray-700">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your first name"
-                    className="mt-2 w-full rounded-xl border px-4 py-3 border-gray-300 outline-none focus:ring-0"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-gray-700">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your last name"
-                    className="mt-2 w-full rounded-xl border px-4 py-3 border-gray-300 outline-none focus:ring-0"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-gray-700">
-                    Email Id
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email id"
-                    className="mt-2 w-full rounded-xl border px-4 py-3 border-gray-300 outline-none focus:ring-0"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-gray-700">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your company name"
-                    className="mt-2 w-full rounded-xl border px-4 py-3 border-gray-300 outline-none focus:ring-0"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="text-sm font-medium text-gray-700">
-                    Comments / Questions
-                  </label>
-                  <textarea
-                    rows={5}
-                    placeholder="Enter your message here..."
-                    className="mt-2 w-full rounded-xl border px-4 py-3 border-gray-300 outline-none focus:ring-0"
-                  ></textarea>
-                </div>
-
-                <div className="md:col-span-2 text-sm text-gray-500">
-                  By filling this form, you agree to our
-                  <span className="text-pink-600 font-medium">
-                    {" "}
-                    Terms & Conditions{" "}
-                  </span>
-                  and
-                  <span className="text-pink-600 font-medium">
-                    {" "}
-                    Privacy Policy
-                  </span>
-                </div>
-
-                <div className="md:col-span-2 flex justify-center lg:justify-end">
-                  <button
-                    type="submit"
-                    className="rounded-full px-8 py-3 text-white font-semibold bg-pink-700 hover:scale-105 transition"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <Web3ContactForm
+                variant="home"
+                onSubmissionStateChange={handleSubmissionStateChange}
+              />
             </div>
           </div>
         </section>

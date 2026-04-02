@@ -3,11 +3,15 @@
 import Navbar from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "aos/dist/aos.css";
 import SmoothScroll from "@/app/Components/SmoothScroll";
 import Slider from "../Components/Slider";
 import Link from "next/link";
+import Web3ContactForm, {
+  type SubmissionState,
+} from "../Components/Web3ContactForm";
+import FloatingToast from "../Components/FloatingToast";
 
 import PageLoader from "../Components/Preloader";
 
@@ -25,6 +29,12 @@ import {
 
 export default function Page() {
   const [loaderDone, setLoaderDone] = useState(false);
+  const [toastState, setToastState] = useState<SubmissionState>({
+    type: "idle",
+    message: "",
+  });
+  const [showToast, setShowToast] = useState(false);
+  const toastTimerRef = useRef<number | null>(null);
 
   const socialIcons = [
     { name: "Twitter", Icon: FaTwitter, url: "https://twitter.com" },
@@ -49,9 +59,36 @@ export default function Page() {
     initAOS();
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current !== null) {
+        window.clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
+  function handleSubmissionStateChange(state: SubmissionState) {
+    setToastState(state);
+
+    if (toastTimerRef.current !== null) {
+      window.clearTimeout(toastTimerRef.current);
+    }
+
+    if (state.type === "idle") {
+      setShowToast(false);
+      return;
+    }
+
+    setShowToast(true);
+    toastTimerRef.current = window.setTimeout(() => {
+      setShowToast(false);
+    }, 3500);
+  }
+
   return (
     <>
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
+      <FloatingToast submissionState={toastState} visible={showToast} />
       <Navbar />
       <SmoothScroll>
         <main>
@@ -225,41 +262,10 @@ export default function Page() {
                 You!
               </p>
 
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="border border-gray-300 p-4 rounded-lg w-full focus:ring-2 focus:ring-pink-600 focus:outline-none transition"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="border border-gray-300 p-4 rounded-lg w-full focus:ring-2 focus:ring-pink-600 focus:outline-none transition"
-                  />
-                </div>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="border border-gray-300 p-4 rounded-lg w-full focus:ring-2 focus:ring-pink-600 focus:outline-none transition"
-                />
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="border border-gray-300 p-4 rounded-lg w-full focus:ring-2 focus:ring-pink-600 focus:outline-none transition"
-                />
-                <textarea
-                  placeholder="Message"
-                  className="border border-gray-300 p-4 rounded-lg w-full min-h-[140px] focus:ring-2 focus:ring-pink-600 focus:outline-none transition"
-                />
-                <p className="text-center lg:text-start">
-                  By filling this form, you have read, understood and agreed to
-                  Terms and Condition&apos;s and Privacy Policy
-                </p>
-                <button className="w-full py-4 rounded-full bg-pink-600 text-white font-bold text-lg hover:scale-105 transition-transform">
-                  Send Message
-                </button>
-              </form>
+              <Web3ContactForm
+                variant="contact"
+                onSubmissionStateChange={handleSubmissionStateChange}
+              />
             </div>
           </div>
         </section>
