@@ -76,6 +76,7 @@ export default function Page() {
 
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Section - 1 */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -132,7 +133,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/direct mail marketing.png"
-                          alt=""
+                          alt="Direct mail campaign materials"
                           fill
                           className="object-cover"
                         />
@@ -144,7 +145,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/mailing documentation.png"
-                          alt=""
+                          alt="Mailing documentation"
                           fill
                           className="object-fix"
                         />
@@ -156,7 +157,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/print design.png"
-                          alt=""
+                          alt="Printed direct mail design"
                           fill
                           className="object-cover"
                         />
@@ -269,7 +270,7 @@ export default function Page() {
                         >
                           <Image
                             src={item.image}
-                            alt=""
+                            alt={item.description}
                             width={20}
                             height={20}
                             className="w-8 h-8 object-cover "
@@ -305,6 +306,7 @@ export default function Page() {
           </div>
         </section>
 
+        </main>
         <Footer />
       </SmoothScroll>
     </>

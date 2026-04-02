@@ -5,6 +5,7 @@ import Footer from "@/app/Components/Footer";
 
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import Slider from "./Components/Slider";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -17,7 +18,6 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  FaCheckCircle,
 } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
@@ -25,6 +25,7 @@ import { FaWallet } from "react-icons/fa";
 
 import PageLoader from "./Components/Preloader";
 import { useCountUpOnView } from "./hooks/useCountUpOnView";
+import { getRouteSchemas } from "@/app/lib/seo";
 
 export default function Home() {
   /* ---------------- LOADER ---------------- */
@@ -80,11 +81,23 @@ export default function Home() {
     },
   ];
 
+  const homeSchemas = getRouteSchemas("/");
+
   return (
     <>
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
+      {homeSchemas.map((schema, index) => (
+        <Script
+          key={`home-schema-${index}`}
+          id={`home-schema-${index}`}
+          type="application/ld+json"
+        >
+          {JSON.stringify(schema)}
+        </Script>
+      ))}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -150,7 +163,7 @@ export default function Home() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Section-1-About-2.jpg"
-                          alt=""
+                          alt="Printed materials showcase"
                           fill
                           className="object-cover"
                         />
@@ -160,7 +173,7 @@ export default function Home() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2 ">
                         <Image
                           src="/Services-3.jpeg"
-                          alt=""
+                          alt="Signage printing display"
                           fill
                           className="object-cover"
                         />
@@ -172,8 +185,9 @@ export default function Home() {
                       <div className="rounded-2xl aspect-square sm:aspect-[3/4] overflow-hidden relative float-2">
                         <Image
                           src="/Home-Hero.jpg"
-                          alt=""
+                          alt="FBS Prints project showcase"
                           fill
+                          priority
                           className="object-cover"
                         />
                       </div>
@@ -181,7 +195,7 @@ export default function Home() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Web Design-hero.png"
-                          alt=""
+                          alt="Website design showcase"
                           fill
                           className="object-cover"
                         />
@@ -193,7 +207,7 @@ export default function Home() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Services-1.jpeg"
-                          alt=""
+                          alt="Custom printing product display"
                           fill
                           className="object-cover"
                         />
@@ -202,7 +216,7 @@ export default function Home() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/Services-2.jpeg"
-                          alt=""
+                          alt="Direct mailing marketing materials"
                           fill
                           className="object-cover"
                         />
@@ -218,7 +232,7 @@ export default function Home() {
         {/* Section-2 */}
         <section className="container section-padding mx-auto">
           <div className="px-4">
-            <h1
+            <h2
               data-aos="fade-up"
               className="uppercase p-5 text-5xl text-center text-pink-700 font-bold"
             >
@@ -227,7 +241,7 @@ export default function Home() {
                 At Our
               </span>{" "}
               Service
-            </h1>
+            </h2>
           </div>
 
           <div className="pt-5">
@@ -238,9 +252,11 @@ export default function Home() {
                   className="bg-gray-200 p-3 rounded-2xl relative w-full shadow-lg transition-transform duration-300 hover:scale-105"
                 >
                   {/* IMAGE */}
-                  <img
+                  <Image
                     src={item.img}
                     alt={item.title}
+                    width={640}
+                    height={320}
                     className="w-full h-[200px] sm:h-[300px] md:h-[320px] object-cover rounded-xl"
                   />
 
@@ -311,9 +327,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center  max-w-[85rem] mx-auto">
             {/* LEFT CONTENT */}
             <div data-aos="fade-right" className="text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl font-bold text-pink-700 leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-bold text-pink-700 leading-tight">
                 Our Work
-              </h1>
+              </h2>
 
               <div className="pt-5 flex justify-center lg:justify-start">
                 <div className="w-16 h-[3px] bg-pink-700 rounded-full"></div>
@@ -391,9 +407,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* TEXT CONTENT */}
             <div data-aos="fade-right" className="text-center md:text-left">
-              <h1 className="uppercase text-lg sm:text-xl md:text-3xl font-semibold">
+              <h2 className="uppercase text-lg sm:text-xl md:text-3xl font-semibold">
                 Customized Printing to
-              </h1>
+              </h2>
 
               <h2
                 className="
@@ -442,7 +458,7 @@ export default function Home() {
             <div className="relative text-white flex flex-col justify-center gap-14 p-10">
               <Image
                 src="/home-contact.jpeg"
-                alt="background"
+                alt=""
                 fill
                 className="object-cover -z-10 opocity-50 blur-sm"
               />
@@ -583,6 +599,7 @@ export default function Home() {
         </section>
 
         <Slider />
+        </main>
         <Footer />
       </SmoothScroll>
     </>

@@ -48,6 +48,7 @@ export default function Page() {
     { title: "Tracking & Reporting", icon: BarChart3 },
     { title: "Competitor Analysis", icon: Eye },
   ];
+  void services;
 
   const steps = [
     {
@@ -102,6 +103,7 @@ export default function Page() {
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Section - 1 */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -152,7 +154,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/direct mail marketing.png"
-                          alt=""
+                          alt="Marketing campaign planning"
                           fill
                           className="object-cover"
                         />
@@ -164,7 +166,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/Services-2.jpeg"
-                          alt=""
+                          alt="Digital marketing materials"
                           fill
                           className="object-fix"
                         />
@@ -176,7 +178,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Section-1-About-2.jpg"
-                          alt=""
+                          alt="Business print assets"
                           fill
                           className="object-cover"
                         />
@@ -244,9 +246,11 @@ export default function Page() {
                 <div className="flex items-center gap-4 mb-5">
                   {/* Icon */}
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-110">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
+                      width={32}
+                      height={32}
                       className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                     />
                   </div>
@@ -275,10 +279,11 @@ export default function Page() {
             {/* Image Wrapper */}
             <div className="relative w-full h-[420px] md:h-[520px] rounded-3xl overflow-hidden shadow-2xl">
               {/* Image */}
-              <img
+              <Image
                 src="/seo-services-2.jpeg"
                 alt="SEO Business"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
 
               {/* Dark Overlay for Readability */}
@@ -306,9 +311,9 @@ export default function Page() {
         {/* Section - 5 */}
         <section className="container section-padding">
           <div>
-            <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-pink-700">
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-pink-700">
               Do not wait – start your SEO journey with FBS PRINTING now!
-            </h1>
+            </h2>
           </div>
           <div className="max-w-4xl mx-auto px-4">
             <p className="text-center text-xl md:text-2xl font-medium text-gray-700 leading-relaxed pt-8">
@@ -319,6 +324,7 @@ export default function Page() {
           </div>
         </section>
 
+        </main>
         <Footer />
       </SmoothScroll>
     </>

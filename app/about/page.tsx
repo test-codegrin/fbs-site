@@ -74,6 +74,7 @@ export default function Page() {
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Section - 1 */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -131,7 +132,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Section-1-About-2.jpg"
-                          alt=""
+                          alt="Printed marketing materials"
                           fill
                           className="object-cover"
                         />
@@ -143,7 +144,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/Web Design-hero.png"
-                          alt=""
+                          alt="Digital design showcase"
                           fill
                           className="object-cover"
                         />
@@ -155,7 +156,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Services-1.jpeg"
-                          alt=""
+                          alt="Custom print product sample"
                           fill
                           className="object-cover"
                         />
@@ -185,13 +186,13 @@ export default function Page() {
                   About FBS Printing
                 </span>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
                   Printing that’s
                   <span className="text-pink-600">
                     {" "}
                     fast, bold & reliable
                   </span>
-                </h1>
+                </h2>
 
                 <p className="text-gray-600 text-base md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   The goal of our business is to offer quick, affordable, and
@@ -267,7 +268,7 @@ export default function Page() {
         <section className="container section-padding">
           <div className="">
             {/* Heading */}
-            <h1
+            <h2
               data-aos="fade-up"
               className="text-pink-700 text-center text-4xl md:text-5xl font-bold mb-12"
             >
@@ -277,7 +278,7 @@ export default function Page() {
                 Does This
               </span>{" "}
               Work?
-            </h1>
+            </h2>
 
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -370,6 +371,7 @@ export default function Page() {
           </div>
         </section>
         <Slider />
+        </main>
         <Footer />
       </SmoothScroll>
     </>

@@ -100,6 +100,7 @@ export default function Page() {
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Section - 1 */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -159,7 +160,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/Section-1-About-2.jpg"
-                          alt=""
+                          alt="Printed brochures and materials"
                           fill
                           className="object-cover"
                         />
@@ -171,7 +172,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/Hotels-menu.png"
-                          alt=""
+                          alt="Printed hotel menu"
                           fill
                           className="object-fix"
                         />
@@ -183,7 +184,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/custom calendar.png"
-                          alt=""
+                          alt="Custom printed calendar"
                           fill
                           className="object-cover"
                         />
@@ -316,6 +317,7 @@ export default function Page() {
           </div>
         </section>
 
+        </main>
         <Footer />
       </SmoothScroll>
     </>

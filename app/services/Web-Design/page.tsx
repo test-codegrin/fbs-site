@@ -101,6 +101,7 @@ export default function Page() {
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Section - 1 */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -157,7 +158,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/business-growth.png"
-                          alt=""
+                          alt="Business growth illustration"
                           fill
                           className="object-cover"
                         />
@@ -169,7 +170,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/business website design.png"
-                          alt=""
+                          alt="Business website design"
                           fill
                           className="object-cover"
                         />
@@ -181,7 +182,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/creative web design.png"
-                          alt=""
+                          alt="Creative web design showcase"
                           fill
                           className="object-cover"
                         />
@@ -273,13 +274,13 @@ export default function Page() {
                 data-aos="fade-left"
                 className="space-y-8 text-center lg:text-left"
               >
-                <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight text-gray-900">
+                <h2 className="text-4xl lg:text-6xl font-extrabold leading-tight text-gray-900">
                   We help brands{" "}
                   <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                     you take your business
                   </span>{" "}
                   to the next level
-                </h1>
+                </h2>
 
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto lg:mx-0">
                   we go beyond design – we build digital solutions that fuel
@@ -474,6 +475,7 @@ export default function Page() {
           </div>
         </section>
 
+        </main>
         <Footer />
       </SmoothScroll>
     </>

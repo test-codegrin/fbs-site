@@ -7,22 +7,22 @@ export default function Slider() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const sliders = [
-    "/Buffalo-Wild-Wings.png",
-    "/CD-one-price.png",
-    "/City-bird-tenders.png",
-    "/Cricket-wireless.png",
-    "/Currito.png",
-    "/Daves-Hot-Chicken.png",
-    "/Dunkins.png",
-    "/Holiday-inn-a.png",
-    "/Jimmy-johns-N.png",
-    "/MCALISTER.png",
-    "/Motel-6-a.png",
-    "/Papa-johns.png",
-    "/Popayes.png",
-    "/rosattis.png",
-    "/Subway.png",
-    "/Wingstop.png",
+    { src: "/Buffalo-Wild-Wings.png", alt: "Buffalo Wild Wings logo" },
+    { src: "/CD-one-price.png", alt: "CD One Price Cleaners logo" },
+    { src: "/City-bird-tenders.png", alt: "City Bird Tenders logo" },
+    { src: "/Cricket-wireless.png", alt: "Cricket Wireless logo" },
+    { src: "/Currito.png", alt: "Currito logo" },
+    { src: "/Daves-Hot-Chicken.png", alt: "Dave's Hot Chicken logo" },
+    { src: "/Dunkins.png", alt: "Dunkin' logo" },
+    { src: "/Holiday-inn-a.png", alt: "Holiday Inn logo" },
+    { src: "/Jimmy-johns-N.png", alt: "Jimmy John's logo" },
+    { src: "/MCALISTER.png", alt: "McAlister's logo" },
+    { src: "/Motel-6-a.png", alt: "Motel 6 logo" },
+    { src: "/Papa-johns.png", alt: "Papa Johns logo" },
+    { src: "/Popayes.png", alt: "Popeyes logo" },
+    { src: "/rosattis.png", alt: "Rosati's logo" },
+    { src: "/Subway.png", alt: "Subway logo" },
+    { src: "/Wingstop.png", alt: "Wingstop logo" },
   ];
 
   useEffect(() => {
@@ -48,27 +48,39 @@ export default function Slider() {
   }, []);
 
   return (
-    <div data-aos="fade-up" className="container section-padding w-full overflow-hidden">
+    <div
+      data-aos="fade-up"
+      className="container section-padding w-full overflow-hidden"
+    >
       <div>
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-pink-700">Trusted  <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">by Leading</span> Brands</h1>
-      <div
-        ref={sliderRef}
-        className="flex gap-40 overflow-x-hidden whitespace-nowrap pt-10"
-      >
-        {/* duplicate images for seamless loop */}
-        {[...sliders, ...sliders, ...sliders].map((src, index) => (
-          <div key={index} className="min-w-[200px] flex justify-center">
-            <Image
-              src={src}
-              alt="brand logo"
-              width={200}
-              height={100}
-              className="object-contain"
-            />
-          </div>
-        ))}
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-pink-700">
+          Trusted{" "}
+          <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+            by Leading
+          </span>{" "}
+          Brands
+        </h2>
+        <div
+          ref={sliderRef}
+          className="flex gap-40 overflow-x-hidden whitespace-nowrap pt-10"
+        >
+          {/* duplicate images for seamless loop */}
+          {[...sliders, ...sliders, ...sliders].map((item, index) => (
+            <div
+              key={`${item.src}-${index}`}
+              className="min-w-[200px] flex justify-center"
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={200}
+                height={100}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

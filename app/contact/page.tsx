@@ -54,6 +54,7 @@ export default function Page() {
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* Section - 1 */}
         <section className="bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container">
@@ -109,7 +110,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/business-communication-office.png"
-                          alt=""
+                          alt="Business communication workspace"
                           fill
                           className="object-cover"
                         />
@@ -121,7 +122,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
                           src="/Conatct.jpeg"
-                          alt=""
+                          alt="Customer contact support"
                           fill
                           className="object-fix"
                         />
@@ -133,7 +134,7 @@ export default function Page() {
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
                           src="/customer support team.png"
-                          alt=""
+                          alt="Customer support team"
                           fill
                           className="object-cover"
                         />
@@ -267,7 +268,7 @@ export default function Page() {
         <section className=" section-padding mx-auto">
           <Image
             src="/globe.png"
-            alt="Logo"
+            alt="Global business illustration"
             width={1500}
             height={500}
             className="w-full h-auto"
@@ -275,6 +276,7 @@ export default function Page() {
         </section>
 
         <Slider />
+        </main>
         <Footer />
       </SmoothScroll>
     </>

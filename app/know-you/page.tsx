@@ -94,7 +94,7 @@ function MapIcon({
         <div className="absolute w-full h-full rounded-full bg-pink-700 shadow-lg overflow-hidden z-10">
           <Image
             src={img}
-            alt="Location"
+            alt={title}
             fill
             sizes="48px"
             className="object-contain p-2"
@@ -222,6 +222,7 @@ export default function Page() {
       {!loaderDone && <PageLoader onFinish={() => setLoaderDone(true)} />}
       <Navbar />
       <SmoothScroll>
+        <main>
         {/* SECTION 1 */}
         <section className="container">
           <div className="relative bg-white rounded-[32px] shadow-xl overflow-hidden">
@@ -233,10 +234,10 @@ export default function Page() {
               >
                 <div className="h-1 w-14 bg-pink-600 rounded-full mb-5"></div>
 
-                <p className="mt-5 text-gray-600 font-bold text-4xl md:text-5xl lg:text-6xl text-center lg:text-start">
+                <h1 className="mt-5 text-gray-600 font-bold text-4xl md:text-5xl lg:text-6xl text-center lg:text-start">
                   Know Your
                   <span className="text-pink-700"> Signs</span>
-                </p>
+                </h1>
 
                 <p className="mt-5 text-gray-600 text-sm sm:text-base leading-relaxed lg:max-w-md text-center lg:text-start">
                   FBS Prints & Signs showcases an extensive collection of
@@ -309,6 +310,7 @@ export default function Page() {
         </section>
 
         <Slider />
+        </main>
         <Footer />
       </SmoothScroll>
     </>

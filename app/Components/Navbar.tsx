@@ -42,14 +42,16 @@ export default function Navbar() {
       <header className="top-0 z-50 w-full shadow-md bg-white">
         <nav className="flex items-center justify-between container section-padding-header">
           {/* LOGO */}
-          <Image
-            src="/FBS-LOGO.png"
-            alt="FBS Logo"
-            width={160}
-            height={60}
-            priority
-            style={{ height: "70px", width: "auto" }}
-          />
+          <Link href="/" aria-label="FBS Prints home">
+            <Image
+              src="/FBS-LOGO.png"
+              alt="FBS Prints logo"
+              width={160}
+              height={60}
+              priority
+              style={{ height: "70px", width: "auto" }}
+            />
+          </Link>
 
           {/* DESKTOP MENU */}
           <ul className="hidden md:flex items-center gap-2 text-xl font-medium">
@@ -105,7 +107,14 @@ export default function Navbar() {
 
           {/* DESKTOP RIGHT */}
           <div className="hidden lg:flex items-center gap-3">
-            <img src="/100-percent.gif" alt="gif" className="w-24" />
+            <Image
+              src="/100-percent.gif"
+              alt="100 percent satisfaction badge"
+              width={96}
+              height={96}
+              unoptimized
+              className="w-24 h-auto"
+            />
             <button className="flex items-center gap-3 bg-yellow-400 px-3 py-2 rounded-full">
               <span className="font-semibold">BOOK A SERVICE</span>
               <Link href="/contact">

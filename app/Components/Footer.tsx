@@ -35,7 +35,7 @@ export default function Footer() {
       <section className="relative h-[420px] flex items-center justify-center">
         <Image
           src="/Footer.png"
-          alt="Footer Background"
+          alt=""
           fill
           className="object-cover"
           priority
@@ -77,7 +77,7 @@ export default function Footer() {
             <div>
               <Image
                 src="/FBS-LOGO.png"
-                alt="FBS Prints"
+                alt="FBS Prints logo"
                 width={90}
                 height={80}
               />
