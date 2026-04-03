@@ -15,24 +15,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  applicationName: siteConfig.name,
-  title: buildPageMetadata("/").title,
-  description: buildPageMetadata("/").description,
-  keywords: buildPageMetadata("/").keywords,
-  alternates: buildPageMetadata("/").alternates,
-  robots: buildPageMetadata("/").robots,
-  openGraph: buildPageMetadata("/").openGraph,
-  twitter: buildPageMetadata("/").twitter,
-  category: "business",
-  referrer: "origin-when-cross-origin",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
-};
+export function generateMetadata(): Metadata {
+  const homeMetadata = buildPageMetadata("/");
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    applicationName: siteConfig.name,
+    title: homeMetadata.title,
+    description: homeMetadata.description,
+    keywords: homeMetadata.keywords,
+    alternates: homeMetadata.alternates,
+    robots: homeMetadata.robots,
+    openGraph: homeMetadata.openGraph,
+    twitter: homeMetadata.twitter,
+    category: "business",
+    referrer: "origin-when-cross-origin",
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/favicon.ico",
+    },
+  };
+}
 
 export default function RootLayout({
   children,

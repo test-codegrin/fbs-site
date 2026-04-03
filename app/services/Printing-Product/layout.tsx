@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { RouteStructuredData } from "@/app/Components/RouteStructuredData";
 import { buildPageMetadata } from "@/app/lib/seo";
 
-export const metadata = buildPageMetadata("/services/Printing-Product");
+export function generateMetadata(): Metadata {
+  return buildPageMetadata("/services/Printing-Product");
+}
 
 export default function PrintingProductLayout({
   children,
