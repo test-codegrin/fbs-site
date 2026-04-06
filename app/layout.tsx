@@ -31,9 +31,9 @@ export function generateMetadata(): Metadata {
     category: "business",
     referrer: "origin-when-cross-origin",
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/favicon.ico",
+      icon: "/FBS.ico",
+      shortcut: "/FBS.ico",
+      apple: "/FBS.ico",
     },
   };
 }
