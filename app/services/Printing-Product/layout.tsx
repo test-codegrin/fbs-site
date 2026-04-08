@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { RouteStructuredData } from "@/app/Components/RouteStructuredData";
 import { buildPageMetadata } from "@/app/lib/seo";
+import { getRequestBaseUrl } from "@/app/lib/request-url";
 
-export function generateMetadata(): Metadata {
-  return buildPageMetadata("/services/Printing-Product");
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata("/services/Printing-Product", await getRequestBaseUrl());
 }
 
 export default function PrintingProductLayout({

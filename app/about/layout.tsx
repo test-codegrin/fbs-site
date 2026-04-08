@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { RouteStructuredData } from "@/app/Components/RouteStructuredData";
 import { buildPageMetadata } from "@/app/lib/seo";
+import { getRequestBaseUrl } from "@/app/lib/request-url";
 
-export function generateMetadata(): Metadata {
-  return buildPageMetadata("/about");
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata("/about", await getRequestBaseUrl());
 }
 
 export default function AboutLayout({ children }: { children: ReactNode }) {

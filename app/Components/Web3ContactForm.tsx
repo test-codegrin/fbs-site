@@ -6,6 +6,7 @@ type Web3ContactFormVariant = "home" | "contact";
 
 type Web3ContactFormProps = {
   variant: Web3ContactFormVariant;
+  accessKey?: string;
   onSubmissionStateChange?: (state: SubmissionState) => void;
 };
 
@@ -23,6 +24,7 @@ const CONTACT_FORM_DRY_RUN =
 
 export default function Web3ContactForm({
   variant,
+  accessKey,
   onSubmissionStateChange,
 }: Web3ContactFormProps) {
   const formId = useId();
@@ -33,6 +35,7 @@ export default function Web3ContactForm({
   });
 
   const isHomeVariant = variant === "home";
+  const resolvedAccessKey = accessKey ?? WEB3FORMS_ACCESS_KEY;
 
   function updateSubmissionState(state: SubmissionState) {
     setSubmissionState(state);
@@ -53,7 +56,7 @@ export default function Web3ContactForm({
       return;
     }
 
-    if (WEB3FORMS_ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY") {
+    if (resolvedAccessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
       updateSubmissionState({
         type: "error",
         message: "Add your Web3Forms access key to activate this form.",
@@ -112,7 +115,7 @@ export default function Web3ContactForm({
         onSubmit={handleSubmit}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+        <input type="hidden" name="access_key" value={resolvedAccessKey} />
         <input
           type="hidden"
           name="subject"
@@ -251,7 +254,7 @@ export default function Web3ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+      <input type="hidden" name="access_key" value={resolvedAccessKey} />
       <input
         type="hidden"
         name="subject"

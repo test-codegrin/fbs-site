@@ -149,7 +149,7 @@ export default function Footer() {
                 </p>
                 <p className="flex items-center gap-2 text-sm sm:text-base">
                   <FaMapMarkerAlt className="text-pink-600 shrink-0" />
-                  <span>Illinois, USA</span>
+                  <span>Serving Naperville &amp; Schaumburg, IL</span>
                 </p>
               </div>
 

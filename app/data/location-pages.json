@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "naperville-il",
+    "city": "Naperville",
+    "state": "Illinois",
+    "stateCode": "IL",
+    "heroBadge": "Naperville Service Area",
+    "marketSummary": "We support Naperville businesses that need consistent branding across print, signage, direct mail, websites, and local search campaigns.",
+    "nearbyAreas": [
+      "Downtown Naperville",
+      "Route 59 corridor",
+      "South Naperville",
+      "95th Street retail zone",
+      "North Naperville business districts",
+      "Nearby DuPage and Will County service areas"
+    ],
+    "businessNeeds": [
+      "Retail promotions and storefront visibility",
+      "Restaurant menus, takeout inserts, and branded print pieces",
+      "Lead-generation mailers for neighborhood outreach",
+      "Website updates that improve conversion and local discovery",
+      "Consistent branding across print, signage, and digital channels"
+    ],
+    "ctaNote": "Tell us what you need to launch, promote, or refresh in Naperville and we will recommend the right mix of service, format, and next steps.",
+    "updatedAt": "2026-04-08"
+  },
+  {
+    "slug": "schaumburg-il",
+    "city": "Schaumburg",
+    "state": "Illinois",
+    "stateCode": "IL",
+    "heroBadge": "Schaumburg Service Area",
+    "marketSummary": "We help Schaumburg businesses move faster with coordinated print, signage, direct mail, web design, and SEO support built for practical local growth.",
+    "nearbyAreas": [
+      "Woodfield area",
+      "Golf Road commercial corridor",
+      "Higgins Road offices",
+      "North Schaumburg",
+      "South Schaumburg",
+      "Nearby Hoffman Estates and Elk Grove service areas"
+    ],
+    "businessNeeds": [
+      "Commercial signage and wayfinding for busy business corridors",
+      "Sales collateral for office, retail, and event campaigns",
+      "Direct mail support for targeted service-area promotions",
+      "Lead-focused websites for local commercial traffic",
+      "SEO improvements that strengthen search visibility in Schaumburg"
+    ],
+    "ctaNote": "Share the project details, timeline, and service mix you need in Schaumburg and we will help you plan the most effective rollout.",
+    "updatedAt": "2026-04-08"
+  }
+]

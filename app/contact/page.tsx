@@ -204,7 +204,7 @@ export default function Page() {
                 <div className="flex items-center gap-4 lg:justify-self-start justify-self-center items-center">
                   <FaMapMarkerAlt className="text-pink-700 text-2xl lg:text-3xl" />
                   <p className="text-lg font-medium text-gray-800">
-                    Illinois, USA
+                    Serving Naperville & Schaumburg, IL
                   </p>
                 </div>
                 <div className="flex items-center gap-4 lg:justify-self-start justify-self-center items-center">
@@ -238,7 +238,7 @@ export default function Page() {
               <div data-aos="fade-up" className="section-padding pt-10">
                 <div className=" rounded-xl overflow-hidden shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps?q=Chicago,USA&output=embed"
+                    src="https://www.google.com/maps?q=Illinois,USA&output=embed"
                     className="w-full h-[300px] md:h-[300px]"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -264,6 +264,7 @@ export default function Page() {
 
               <Web3ContactForm
                 variant="contact"
+                accessKey="8f9e2665-bede-4f1c-a786-da376d65cf7c"
                 onSubmissionStateChange={handleSubmissionStateChange}
               />
             </div>

@@ -13,6 +13,7 @@ import "aos/dist/aos.css";
 import { useEffect, useRef, useState } from "react";
 
 import SmoothScroll from "@/app/Components/SmoothScroll";
+import { useBaseUrl } from "@/app/Components/BaseUrlProvider";
 
 import {
   FaMapMarkerAlt,
@@ -32,6 +33,7 @@ import Web3ContactForm, {
 import FloatingToast from "./Components/FloatingToast";
 
 export default function Home() {
+  const baseUrl = useBaseUrl();
   /* ---------------- LOADER ---------------- */
   const [loaderDone, setLoaderDone] = useState(false);
   const [toastState, setToastState] = useState<SubmissionState>({
@@ -117,7 +119,7 @@ export default function Home() {
     },
   ];
 
-  const homeSchemas = getRouteSchemas("/");
+  const homeSchemas = getRouteSchemas("/", baseUrl);
 
   return (
     <>

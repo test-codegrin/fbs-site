@@ -5,6 +5,7 @@ export type PublicPagePath =
   | "/about"
   | "/contact"
   | "/know-you"
+  | "/privacy"
   | "/services/Printing-Product"
   | "/services/Direct-MaIilintg"
   | "/services/Signage"
@@ -45,6 +46,10 @@ export const siteConfig = {
   locale: "en_US",
   phone: "+1-855-222-1133",
   email: "info@fbsprints.com",
+  serviceAreas: [
+    { city: "Naperville", stateCode: "IL" },
+    { city: "Schaumburg", stateCode: "IL" },
+  ],
   sameAs: [
     "https://twitter.com",
     "https://linkedin.com",
@@ -54,6 +59,13 @@ export const siteConfig = {
     "https://behance.net",
   ],
 } as const;
+
+export const supportedHosts = [
+  "www.fbsprints.com",
+  "fbsprints.com",
+  "www.fbssigns.com",
+  "fbssigns.com",
+] as const;
 
 const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
   "/": {
@@ -125,6 +137,24 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
     breadcrumbs: [
       { name: "Home", path: "/" },
       { name: "Know Your Signs", path: "/know-you" },
+    ],
+  },
+  "/privacy": {
+    title: "Privacy Policy | FBS Prints",
+    description:
+      "Read the FBS Prints privacy policy to understand how we handle quote requests, contact details, website usage data, and communication related to your projects.",
+    keywords: [
+      "privacy policy",
+      "FBS Prints privacy",
+      "quote request privacy",
+      "website privacy policy",
+      "data handling policy",
+    ],
+    image: "/FBS-LOGO.png",
+    schemaType: "WebPage",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Privacy Policy", path: "/privacy" },
     ],
   },
   "/services/Printing-Product": {
@@ -228,15 +258,40 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
 
 export const publicPagePaths = Object.keys(pageSeo) as PublicPagePath[];
 
-export function absoluteUrl(path = "") {
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return new URL(normalizedPath, siteConfig.url).toString();
+export function resolveBaseUrl(host: string | null | undefined, protocol?: string | null) {
+  const normalizedHost = host?.split(",")[0]?.trim().toLowerCase();
+
+  if (!normalizedHost) {
+    return siteConfig.url;
+  }
+
+  const isLocalHost =
+    normalizedHost.startsWith("localhost:") ||
+    normalizedHost.startsWith("127.0.0.1:");
+
+  if (!isLocalHost && !supportedHosts.includes(normalizedHost as (typeof supportedHosts)[number])) {
+    return siteConfig.url;
+  }
+
+  const normalizedProtocol =
+    protocol === "http" || protocol === "https"
+      ? protocol
+      : isLocalHost
+        ? "http"
+        : "https";
+
+  return `${normalizedProtocol}://${normalizedHost}`;
 }
 
-export function buildPageMetadata(path: PublicPagePath): Metadata {
+export function absoluteUrl(path = "", baseUrl = siteConfig.url) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return new URL(normalizedPath, baseUrl).toString();
+}
+
+export function buildPageMetadata(path: PublicPagePath, baseUrl = siteConfig.url): Metadata {
   const page = pageSeo[path];
-  const canonical = absoluteUrl(path);
-  const image = absoluteUrl(page.image);
+  const canonical = absoluteUrl(path, baseUrl);
+  const image = absoluteUrl(page.image, baseUrl);
 
   return {
     title: page.title,
@@ -281,16 +336,16 @@ export function buildPageMetadata(path: PublicPagePath): Metadata {
   };
 }
 
-export function getGlobalSchemas() {
+export function getGlobalSchemas(baseUrl = siteConfig.url) {
   return [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "@id": `${absoluteUrl("/") }#organization`,
+      "@id": `${absoluteUrl("/", baseUrl)}#organization`,
       name: siteConfig.name,
-      url: absoluteUrl("/"),
-      logo: absoluteUrl("/FBS-LOGO.png"),
-      image: absoluteUrl(siteConfig.ogImage),
+      url: absoluteUrl("/", baseUrl),
+      logo: absoluteUrl("/FBS-LOGO.png", baseUrl),
+      image: absoluteUrl(siteConfig.ogImage, baseUrl),
       email: siteConfig.email,
       telephone: siteConfig.phone,
       sameAs: siteConfig.sameAs,
@@ -300,7 +355,9 @@ export function getGlobalSchemas() {
           contactType: "customer service",
           telephone: siteConfig.phone,
           email: siteConfig.email,
-          areaServed: "US",
+          areaServed: siteConfig.serviceAreas.map(
+            (area) => `${area.city}, ${area.stateCode}`,
+          ),
           availableLanguage: "en",
         },
       ],
@@ -313,21 +370,21 @@ export function getGlobalSchemas() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": `${absoluteUrl("/") }#website`,
+      "@id": `${absoluteUrl("/", baseUrl)}#website`,
       name: siteConfig.name,
-      url: absoluteUrl("/"),
+      url: absoluteUrl("/", baseUrl),
       description: siteConfig.defaultDescription,
       publisher: {
-        "@id": `${absoluteUrl("/") }#organization`,
+        "@id": `${absoluteUrl("/", baseUrl)}#organization`,
       },
       inLanguage: "en-US",
     },
   ];
 }
 
-export function getRouteSchemas(path: PublicPagePath) {
+export function getRouteSchemas(path: PublicPagePath, baseUrl = siteConfig.url) {
   const page = pageSeo[path];
-  const url = absoluteUrl(path);
+  const url = absoluteUrl(path, baseUrl);
   const pageId = `${url}#webpage`;
   const breadcrumbId = `${url}#breadcrumb`;
 
@@ -339,7 +396,7 @@ export function getRouteSchemas(path: PublicPagePath) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: absoluteUrl(item.path),
+      item: absoluteUrl(item.path, baseUrl),
     })),
   };
 
@@ -352,17 +409,17 @@ export function getRouteSchemas(path: PublicPagePath) {
     url,
     inLanguage: "en-US",
     isPartOf: {
-      "@id": `${absoluteUrl("/") }#website`,
+      "@id": `${absoluteUrl("/", baseUrl)}#website`,
     },
     about: {
-      "@id": `${absoluteUrl("/") }#organization`,
+      "@id": `${absoluteUrl("/", baseUrl)}#organization`,
     },
     breadcrumb: {
       "@id": breadcrumbId,
     },
     primaryImageOfPage: {
       "@type": "ImageObject",
-      url: absoluteUrl(page.image),
+      url: absoluteUrl(page.image, baseUrl),
     },
   };
 
@@ -378,14 +435,14 @@ export function getRouteSchemas(path: PublicPagePath) {
     serviceType: page.serviceType,
     description: page.description,
     url,
-    image: absoluteUrl(page.image),
+    image: absoluteUrl(page.image, baseUrl),
     provider: {
-      "@id": `${absoluteUrl("/") }#organization`,
+      "@id": `${absoluteUrl("/", baseUrl)}#organization`,
     },
-    areaServed: {
-      "@type": "State",
-      name: "Illinois",
-    },
+    areaServed: siteConfig.serviceAreas.map((area) => ({
+      "@type": "City",
+      name: area.city,
+    })),
   };
 
   return [breadcrumbSchema, pageSchema, serviceSchema];

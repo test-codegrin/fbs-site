@@ -5,13 +5,13 @@ import { buildPageMetadata } from "@/app/lib/seo";
 import { getRequestBaseUrl } from "@/app/lib/request-url";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildPageMetadata("/services/Web-Design", await getRequestBaseUrl());
+  return buildPageMetadata("/privacy", await getRequestBaseUrl());
 }
 
-export default function WebDesignLayout({ children }: { children: ReactNode }) {
+export default function PrivacyLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <RouteStructuredData path="/services/Web-Design" />
+      <RouteStructuredData path="/privacy" />
       {children}
     </>
   );

@@ -226,7 +226,7 @@ export default function Navbar() {
                 <FaEnvelope />
               </p>
               <p className="block text-black hover:text-white/70 text-md tracking-wide transition-colors duration-200">
-                info@fbsprint.com
+                info@fbsprints.com
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -242,7 +242,7 @@ export default function Navbar() {
                 <FaMapMarkerAlt />
               </p>
               <p className="block  text-black hover:text-white/70 text-md tracking-wide transition-colors duration-200">
-                Illinois, USA
+                Serving Naperville & Schaumburg, IL
               </p>
             </div>
           </div>

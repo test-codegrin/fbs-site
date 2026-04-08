@@ -4,6 +4,8 @@ import "./globals.css";
 import BackToTop from "./Components/BackToTop";
 import { buildPageMetadata, siteConfig } from "@/app/lib/seo";
 import { GlobalStructuredData } from "@/app/Components/RouteStructuredData";
+import { BaseUrlProvider } from "./Components/BaseUrlProvider";
+import { getRequestBaseUrl } from "@/app/lib/request-url";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,11 +17,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export function generateMetadata(): Metadata {
-  const homeMetadata = buildPageMetadata("/");
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = await getRequestBaseUrl();
+  const homeMetadata = buildPageMetadata("/", baseUrl);
 
   return {
-    metadataBase: new URL(siteConfig.url),
+    metadataBase: new URL(baseUrl),
     applicationName: siteConfig.name,
     title: homeMetadata.title,
     description: homeMetadata.description,
@@ -38,11 +41,13 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const baseUrl = await getRequestBaseUrl();
+
   return (
     <html lang="en" className="lenis lenis-smooth lenis-scrolling">
       <head>
@@ -52,9 +57,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <GlobalStructuredData />
-        {children}
-        <BackToTop />
+        <BaseUrlProvider baseUrl={baseUrl}>
+          <GlobalStructuredData />
+          {children}
+          <BackToTop />
+        </BaseUrlProvider>
       </body>
     </html>
   );

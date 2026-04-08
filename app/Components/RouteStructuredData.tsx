@@ -4,13 +4,15 @@ import {
   getRouteSchemas,
   type PublicPagePath,
 } from "@/app/lib/seo";
+import { getRequestBaseUrl } from "@/app/lib/request-url";
 
 function schemaId(prefix: string, index: number) {
   return `${prefix}-${index}`;
 }
 
-export function GlobalStructuredData() {
-  const schemas = getGlobalSchemas();
+export async function GlobalStructuredData() {
+  const baseUrl = await getRequestBaseUrl();
+  const schemas = getGlobalSchemas(baseUrl);
 
   return (
     <>
@@ -27,8 +29,9 @@ export function GlobalStructuredData() {
   );
 }
 
-export function RouteStructuredData({ path }: { path: PublicPagePath }) {
-  const schemas = getRouteSchemas(path);
+export async function RouteStructuredData({ path }: { path: PublicPagePath }) {
+  const baseUrl = await getRequestBaseUrl();
+  const schemas = getRouteSchemas(path, baseUrl);
   const prefix = `route-schema-${path.replace(/\W+/g, "-") || "home"}`;
 
   return (
