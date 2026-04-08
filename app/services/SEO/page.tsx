@@ -52,42 +52,42 @@ export default function Page() {
 
   const steps = [
     {
-      image: "/icons/Website Audit & SEO Strategy.png",
+      image: "/icons/website-audit-seo-strategy.png",
       title: "Website Audit & SEO Strategy",
       desc: "We start with a complete website audit to identify opportunities, fix issues, and create a strategy tailored to your goals.",
     },
     {
-      image: "/icons/On-Page Optimization.png",
+      image: "/icons/on-page-optimization.png",
       title: "On-Page Optimization",
       desc: "From keyword research to meta tags, headings, and content improvements, we optimize every page for search engines and users.",
     },
     {
-      image: "/icons/Technical SEO.png",
+      image: "/icons/technical-seo.png",
       title: "Technical SEO",
       desc: "Fast-loading, mobile-friendly, and error-free websites perform better in rankings. We handle site speed, indexing, structured data, and technical fixes.",
     },
     {
-      image: "/icons/Local SEO.png",
+      image: "/icons/local-seo.png",
       title: "Local SEO ",
       desc: "Get found by customers near you! We optimize your Google Business Profile, local citations, and location-based keywords so you dominate local searches.",
     },
     {
-      image: "/icons/Content Creation & Optimization.png",
+      image: "/icons/content-creation-optimization.png",
       title: "Content Creation & Optimization",
       desc: "Get found by customers near you! We optimize your Google Business Profile, local citations, and location-based keywords so you dominate local searches.",
     },
     {
-      image: "/icons/Link Building & Authority Growth.png",
+      image: "/icons/link-building-authority-growth.png",
       title: "Link Building & Authority Growth",
       desc: "We build high quality backlinks that increase your website’s credibility and push you higher on search engines.",
     },
     {
-      image: "/icons/Tracking & Reporting.png",
+      image: "/icons/tracking-reporting.png",
       title: "Tracking & Reporting",
       desc: "You’ll receive transparent reports that show keyword rankings, traffic growth, and ROI. No fluff, just results.",
     },
     {
-      image: "/icons/Tracking & Reporting.png",
+      image: "/icons/tracking-reporting.png",
       title: "Tracking & Reporting",
       desc: "You’ll receive transparent reports that show keyword rankings, traffic growth, and ROI. No fluff, just results.",
     },
@@ -153,8 +153,8 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/direct mail marketing.png"
-                          alt="Marketing campaign planning"
+                          src="/images/services/direct-mail/direct-mail-marketing.webp"
+                          alt="Local marketing campaign planning materials"
                           fill
                           className="object-cover"
                         />
@@ -165,8 +165,8 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/Services-2.jpeg"
-                          alt="Digital marketing materials"
+                          src="/images/services/direct-mail/direct-mail-service.webp"
+                          alt="Digital marketing and SEO support materials"
                           fill
                           className="object-fix"
                         />
@@ -177,8 +177,8 @@ export default function Page() {
                     <div className="col-span-1 space-y-6 sm:mt-16 ">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/Section-1-About-2.jpg"
-                          alt="Business print assets"
+                          src="/images/shared/printing-materials-showcase.webp"
+                          alt="Branded print assets supporting local campaigns"
                           fill
                           className="object-cover"
                         />
@@ -280,8 +280,8 @@ export default function Page() {
             <div className="relative w-full h-[420px] md:h-[520px] rounded-3xl overflow-hidden shadow-2xl">
               {/* Image */}
               <Image
-                src="/seo-services-2.jpeg"
-                alt="SEO Business"
+                src="/images/services/seo/seo-services-hero.webp"
+                alt="Search engine optimization strategy and reporting visual"
                 fill
                 className="object-cover"
               />

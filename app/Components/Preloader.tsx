@@ -19,8 +19,8 @@ export default function Preloader({
   return (
     <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
       <Image
-        src="/FBS-LOGO.png"
-        alt="FBS Logo"
+        src="/images/brand/fbs-prints-logo.webp"
+        alt="FBS Prints logo"
         width={100}
         height={80}
         className="animate-bounce"

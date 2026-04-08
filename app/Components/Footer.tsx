@@ -34,7 +34,7 @@ export default function Footer() {
       {/* ===== CTA SECTION ===== */}
       <section className="relative h-[420px] flex items-center justify-center">
         <Image
-          src="/Footer.png"
+          src="/images/brand/footer-cta-background.webp"
           alt=""
           fill
           className="object-cover"
@@ -76,7 +76,7 @@ export default function Footer() {
             {/* Logo */}
             <div>
               <Image
-                src="/FBS-LOGO.png"
+                src="/images/brand/fbs-prints-logo.webp"
                 alt="FBS Prints logo"
                 width={90}
                 height={80}
@@ -113,21 +113,21 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2 font-medium">
                 <li>
-                  <Link href="/services/Printing-Product">
+                  <Link href="/services/printing-products">
                     Printing Product
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/Signage">Signage</Link>
+                  <Link href="/services/signage">Signage</Link>
                 </li>
                 <li>
-                  <Link href="/services/Direct-MaIilintg">Direct Mailing</Link>
+                  <Link href="/services/direct-mailing">Direct Mailing</Link>
                 </li>
                 <li>
-                  <Link href="/services/Web-Design">Web Design</Link>
+                  <Link href="/services/web-design">Web Design</Link>
                 </li>
                 <li>
-                  <Link href="/services/SEO">SEO</Link>
+                  <Link href="/services/seo">SEO</Link>
                 </li>
               </ul>
             </div>

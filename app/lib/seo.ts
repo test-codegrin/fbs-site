@@ -6,11 +6,11 @@ export type PublicPagePath =
   | "/contact"
   | "/know-you"
   | "/privacy"
-  | "/services/Printing-Product"
-  | "/services/Direct-MaIilintg"
-  | "/services/Signage"
-  | "/services/Web-Design"
-  | "/services/SEO";
+  | "/services/printing-products"
+  | "/services/direct-mailing"
+  | "/services/signage"
+  | "/services/web-design"
+  | "/services/seo";
 
 type BreadcrumbItem = {
   name: string;
@@ -42,7 +42,7 @@ export const siteConfig = {
     "SEO services",
     "Illinois printing company",
   ],
-  ogImage: "/Home-Hero.jpg",
+  ogImage: "/images/home/printing-branding-hero.webp",
   locale: "en_US",
   phone: "+1-855-222-1133",
   email: "info@fbsprints.com",
@@ -80,7 +80,7 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "SEO agency",
       "branding services",
     ],
-    image: "/Home-Hero.jpg",
+    image: "/images/home/printing-branding-hero.webp",
     schemaType: "WebPage",
     breadcrumbs: [{ name: "Home", path: "/" }],
   },
@@ -95,7 +95,7 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "signage company",
       "custom printing services",
     ],
-    image: "/Section-1-About-3.jpg",
+    image: "/images/about/about-fbs-prints-team.webp",
     schemaType: "AboutPage",
     breadcrumbs: [
       { name: "Home", path: "/" },
@@ -113,7 +113,7 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "marketing services contact",
       "Illinois print shop contact",
     ],
-    image: "/Conatct.jpeg",
+    image: "/images/contact/contact-support-hero.webp",
     schemaType: "ContactPage",
     breadcrumbs: [
       { name: "Home", path: "/" },
@@ -132,7 +132,7 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "channel letters",
       "sign design inspiration",
     ],
-    image: "/Knowyouimg1.jpg",
+    image: "/images/know-your-signs/know-your-signs-hero.webp",
     schemaType: "CollectionPage",
     breadcrumbs: [
       { name: "Home", path: "/" },
@@ -150,14 +150,14 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "website privacy policy",
       "data handling policy",
     ],
-    image: "/FBS-LOGO.png",
+    image: "/images/brand/fbs-prints-logo.webp",
     schemaType: "WebPage",
     breadcrumbs: [
       { name: "Home", path: "/" },
       { name: "Privacy Policy", path: "/privacy" },
     ],
   },
-  "/services/Printing-Product": {
+  "/services/printing-products": {
     title: "Printing Products | Custom Business Printing by FBS Prints",
     description:
       "Discover FBS Prints printing products including business cards, brochures, banners, calendars, menus, and more custom print solutions.",
@@ -168,15 +168,15 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "banner printing",
       "custom print products",
     ],
-    image: "/Hotels-menu.png",
+    image: "/images/services/printing/hotel-menu-printing.webp",
     schemaType: "WebPage",
     serviceType: "Printing Products",
     breadcrumbs: [
       { name: "Home", path: "/" },
-      { name: "Printing Product", path: "/services/Printing-Product" },
+      { name: "Printing Product", path: "/services/printing-products" },
     ],
   },
-  "/services/Direct-MaIilintg": {
+  "/services/direct-mailing": {
     title: "Direct Mailing Services | Design, Print & Mail with FBS Prints",
     description:
       "Use FBS Prints direct mailing services for campaign design, print production, bundling, and delivery support that helps your message reach customers on time.",
@@ -187,15 +187,15 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "postcard mailing",
       "direct mail company",
     ],
-    image: "/direct mail marketing.png",
+    image: "/images/services/direct-mail/direct-mail-marketing.webp",
     schemaType: "WebPage",
     serviceType: "Direct Mailing",
     breadcrumbs: [
       { name: "Home", path: "/" },
-      { name: "Direct Mailing", path: "/services/Direct-MaIilintg" },
+      { name: "Direct Mailing", path: "/services/direct-mailing" },
     ],
   },
-  "/services/Signage": {
+  "/services/signage": {
     title: "Signage Services | Business Signs, Wraps & Displays by FBS Prints",
     description:
       "View FBS Prints signage services for banners, LED signs, monument signs, pylon signs, vehicle graphics, window lettering, and more custom displays.",
@@ -207,15 +207,15 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "window lettering",
       "monument signs",
     ],
-    image: "/Signage-hero.jpeg",
+    image: "/images/services/signage/signage-services-hero.webp",
     schemaType: "WebPage",
     serviceType: "Signage",
     breadcrumbs: [
       { name: "Home", path: "/" },
-      { name: "Signage", path: "/services/Signage" },
+      { name: "Signage", path: "/services/signage" },
     ],
   },
-  "/services/Web-Design": {
+  "/services/web-design": {
     title: "Web Design Services | Responsive Business Websites by FBS Prints",
     description:
       "FBS Prints creates responsive, conversion-focused web design solutions that help businesses build stronger online visibility and customer engagement.",
@@ -226,15 +226,15 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "conversion focused websites",
       "digital solutions",
     ],
-    image: "/business website design.png",
+    image: "/images/services/web-design/business-website-design.webp",
     schemaType: "WebPage",
     serviceType: "Web Design",
     breadcrumbs: [
       { name: "Home", path: "/" },
-      { name: "Web Design", path: "/services/Web-Design" },
+      { name: "Web Design", path: "/services/web-design" },
     ],
   },
-  "/services/SEO": {
+  "/services/seo": {
     title: "SEO Services | Technical, Local & On-Page SEO by FBS Prints",
     description:
       "Grow search visibility with FBS Prints SEO services including audits, technical SEO, local SEO, content optimization, link building, and reporting.",
@@ -246,12 +246,12 @@ const pageSeo: Record<PublicPagePath, PageSeoConfig> = {
       "SEO audit",
       "link building",
     ],
-    image: "/seo-services-2.jpeg",
+    image: "/images/services/seo/seo-services-hero.webp",
     schemaType: "WebPage",
     serviceType: "SEO",
     breadcrumbs: [
       { name: "Home", path: "/" },
-      { name: "SEO", path: "/services/SEO" },
+      { name: "SEO", path: "/services/seo" },
     ],
   },
 };
@@ -344,7 +344,7 @@ export function getGlobalSchemas(baseUrl = siteConfig.url) {
       "@id": `${absoluteUrl("/", baseUrl)}#organization`,
       name: siteConfig.name,
       url: absoluteUrl("/", baseUrl),
-      logo: absoluteUrl("/FBS-LOGO.png", baseUrl),
+      logo: absoluteUrl("/images/brand/fbs-prints-logo.webp", baseUrl),
       image: absoluteUrl(siteConfig.ogImage, baseUrl),
       email: siteConfig.email,
       telephone: siteConfig.phone,

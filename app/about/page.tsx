@@ -131,7 +131,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/Section-1-About-2.jpg"
+                          src="/images/shared/printing-materials-showcase.webp"
                           alt="Printed marketing materials"
                           fill
                           className="object-cover"
@@ -143,7 +143,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/Web Design-hero.png"
+                          src="/images/shared/website-design-showcase.webp"
                           alt="Digital design showcase"
                           fill
                           className="object-cover"
@@ -155,7 +155,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-6 sm:mt-16 ">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/Services-1.jpeg"
+                          src="/images/services/printing/printing-products-service.webp"
                           alt="Custom print product sample"
                           fill
                           className="object-cover"
@@ -220,8 +220,8 @@ export default function Page() {
                 <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-pink-400 to-green-400 blur-2xl opacity-30"></div>
 
                 <Image
-                  src="/Section-1-About-3.jpg"
-                  alt="Printing Service"
+                  src="/images/about/about-fbs-prints-team.webp"
+                  alt="FBS Prints team collaborating on print and branding projects"
                   width={700}
                   height={500}
                   priority

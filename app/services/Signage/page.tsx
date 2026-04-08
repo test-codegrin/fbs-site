@@ -31,102 +31,102 @@ export default function Page() {
     {
       id: 1,
       text: "Advertising Flags",
-      image: "/icons/Advertising Flags.png",
+      image: "/icons/advertising-flags.png",
     },
     {
       id: 2,
       text: "Banner Stands",
-      image: "/icons/Banner Stands.png",
+      image: "/icons/banner-stands.png",
     },
     {
       id: 3,
       text: "Banner",
-      image: "/icons/Banner.png",
+      image: "/icons/banner.png",
     },
     {
       id: 4,
       text: "Custom Neon LED",
-      image: "/icons/Custom Neon LED.png",
+      image: "/icons/custom-neon-led.png",
     },
     {
       id: 5,
       text: "Custom Event Tents",
-      image: "/icons/Custom Event Tents.png",
+      image: "/icons/custom-event-tents.png",
     },
     {
       id: 6,
       text: "Canopy/Awning",
-      image: "/icons/CanopyAwning.png",
+      image: "/icons/canopy-awning.png",
     },
     {
       id: 7,
       text: "LED Light Box",
-      image: "/icons/LED Light Box.png",
+      image: "/icons/led-light-box.png",
     },
     {
       id: 8,
       text: "LED Message Board",
-      image: "/icons/LED Message Board.png",
+      image: "/icons/led-message-board.png",
     },
     {
       id: 9,
       text: "LED Channel Letters",
-      image: "/icons/LED Channel Letters.png",
+      image: "/icons/led-channel-letters.png",
     },
     {
       id: 10,
       text: "Monument Signs",
-      image: "/icons/Monument Signs.png",
+      image: "/icons/monument-signs.png",
     },
     {
       id: 11,
       text: "Pylon Signs",
-      image: "/icons/Pylon Signs.png",
+      image: "/icons/pylon-signs.png",
     },
     {
       id: 12,
       text: "Signicade A Frame",
-      image: "/icons/Signicade A Frame.png",
+      image: "/icons/signicade-a-frame.png",
     },
     {
       id: 13,
       text: "Trade Show Products",
-      image: "/icons/Trade Show Products.png",
+      image: "/icons/trade-show-products.png",
     },
     {
       id: 14,
       text: "Vehicle Graphics",
-      image: "/icons/Vehicle Graphics.png",
+      image: "/icons/vehicle-graphics.png",
     },
     {
       id: 15,
       text: "Vehicle Wraps",
-      image: "/icons/Vehicle Wraps.png",
+      image: "/icons/vehicle-wraps.png",
     },
     {
       id: 16,
       text: "Window Lettering",
-      image: "/icons/Window Lettering.png",
+      image: "/icons/window-lettering.png",
     },
     {
       id: 17,
       text: "Yard Signs",
-      image: "/icons/Yard Signs.png",
+      image: "/icons/yard-signs.png",
     },
     {
       id: 18,
       text: "And More...",
-      image: "/icons/And More.png",
+      image: "/icons/and-more.png",
     },
   ];
 
   const services = [
-    { title: "Awning & Canopy", img: "/Awning -Canopy.png" },
-    { title: "Car Wrap", img: "/Car Wrap.png" },
-    { title: "Exterior Monuments", img: "/Exterior Monuments.png" },
-    { title: "Wall Sign", img: "/Wall Sign.png" },
-    { title: "Street Sign", img: "/Street Sign.png" },
-    { title: "Window Graphics", img: "/Window Graphics.png" },
+    { title: "Awning & Canopy", img: "/images/services/signage/awning-canopy-signage.webp" },
+    { title: "Car Wrap", img: "/images/services/signage/car-wrap-signage.webp" },
+    { title: "Exterior Monuments", img: "/images/services/signage/exterior-monument-signage.webp" },
+    { title: "Wall Sign", img: "/images/services/signage/wall-signage-example.webp" },
+    { title: "Street Sign", img: "/images/services/signage/street-signage-example.webp" },
+    { title: "Window Graphics", img: "/images/services/signage/window-graphics-example.webp" },
   ];
 
   return (
@@ -186,7 +186,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/yard sign marketing.png"
+                          src="/images/services/signage/yard-sign-marketing.webp"
                           alt="Yard sign marketing"
                           fill
                           className="object-cover"
@@ -198,7 +198,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/custom neon signage.png"
+                          src="/images/services/signage/custom-neon-signage.webp"
                           alt="Custom neon signage"
                           fill
                           className="object-fix"
@@ -210,7 +210,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-6 sm:mt-16 ">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/signage LED.png"
+                          src="/images/services/signage/led-signage.webp"
                           alt="LED signage example"
                           fill
                           className="object-cover"

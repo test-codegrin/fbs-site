@@ -88,34 +88,34 @@ export default function Home() {
 
   const ourservies = [
     {
-      img: "/Services-1.jpeg",
+      img: "/images/services/printing/printing-products-service.webp",
       title: "PRINT ON PRODUCT",
       des: "CUSTOMIZED PRINT",
-      href: "/services/Printing-Product",
+      href: "/services/printing-products",
     },
     {
-      img: "/Services-2.jpeg",
+      img: "/images/services/direct-mail/direct-mail-service.webp",
       title: "DIRECT MAILING",
       des: "MARKETING",
-      href: "/services/Direct-MaIilintg",
+      href: "/services/direct-mailing",
     },
     {
-      img: "/Services-3.jpeg",
+      img: "/images/services/signage/signage-service.webp",
       title: "SIGNAGE PRINTING",
       des: "ViSIBLE YOUR BUSINESS",
-      href: "/services/Signage",
+      href: "/services/signage",
     },
     {
-      img: "/Services-4.jpeg",
+      img: "/images/services/web-design/web-design-service.webp",
       title: "WEBSITE DESIGN",
       des: "GROW ONLINE",
-      href: "/services/Web-Design",
+      href: "/services/web-design",
     },
     {
-      img: "/Services-5.jpeg",
+      img: "/images/services/seo/seo-service-card.webp",
       title: "SEO SERVICES",
       des: "OPTIMIZE YOUR BUSINESS ONLINE",
-      href: "/services/SEO",
+      href: "/services/seo",
     },
   ];
 
@@ -201,7 +201,7 @@ export default function Home() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/Section-1-About-2.jpg"
+                          src="/images/shared/printing-materials-showcase.webp"
                           alt="Printed materials showcase"
                           fill
                           className="object-cover"
@@ -211,7 +211,7 @@ export default function Home() {
                       {/* Hide on mobile */}
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2 ">
                         <Image
-                          src="/Services-3.jpeg"
+                          src="/images/services/signage/signage-service.webp"
                           alt="Signage printing display"
                           fill
                           className="object-cover"
@@ -223,7 +223,7 @@ export default function Home() {
                     <div className="col-span-1 space-y-4 sm:space-y-6">
                       <div className="rounded-2xl aspect-square sm:aspect-[3/4] overflow-hidden relative float-2">
                         <Image
-                          src="/Home-Hero.jpg"
+                          src="/images/home/printing-branding-hero.webp"
                           alt="FBS Prints project showcase"
                           fill
                           priority
@@ -233,7 +233,7 @@ export default function Home() {
 
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/Web Design-hero.png"
+                          src="/images/shared/website-design-showcase.webp"
                           alt="Website design showcase"
                           fill
                           className="object-cover"
@@ -245,7 +245,7 @@ export default function Home() {
                     <div className="col-span-1 space-y-6 sm:mt-16 hidden sm:block">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/Services-1.jpeg"
+                          src="/images/services/printing/printing-products-service.webp"
                           alt="Custom printing product display"
                           fill
                           className="object-cover"
@@ -254,7 +254,7 @@ export default function Home() {
 
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/Services-2.jpeg"
+                          src="/images/services/direct-mail/direct-mail-service.webp"
                           alt="Direct mailing marketing materials"
                           fill
                           className="object-cover"
@@ -336,8 +336,8 @@ export default function Home() {
         <section className="container section-padding overflow-x-hidden">
           <div className="relative group overflow-hidden shadow-lg rounded-2xl">
             <Image
-              src="/AdobeStock.png"
-              alt="Printing Service"
+              src="/images/home/printing-service-showcase.webp"
+              alt="FBS Prints print and signage service showcase"
               width={800}
               height={500}
               className="w-full h-96 md:h-[500px] object-cover"
@@ -480,8 +480,8 @@ export default function Home() {
             {/* IMAGE */}
             <div className="relative" data-aos="fade-left">
               <Image
-                src="/Printing Gols.png"
-                alt="Printing Service"
+                src="/images/home/printing-business-goals.webp"
+                alt="Custom printing materials supporting business growth goals"
                 width={800}
                 height={500}
                 className="w-full h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-xl shadow-pink-20"
@@ -496,7 +496,7 @@ export default function Home() {
             {/* LEFT CONTACT INFO */}
             <div className="relative text-white flex flex-col justify-center gap-14 p-10">
               <Image
-                src="/home-contact.jpeg"
+                src="/images/home/contact-section-background.webp"
                 alt=""
                 fill
                 className="object-cover -z-10 opocity-50 blur-sm"

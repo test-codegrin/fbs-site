@@ -5,13 +5,13 @@ import { buildPageMetadata } from "@/app/lib/seo";
 import { getRequestBaseUrl } from "@/app/lib/request-url";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildPageMetadata("/services/Signage", await getRequestBaseUrl());
+  return buildPageMetadata("/services/signage", await getRequestBaseUrl());
 }
 
 export default function SignageLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <RouteStructuredData path="/services/Signage" />
+      <RouteStructuredData path="/services/signage" />
       {children}
     </>
   );

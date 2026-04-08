@@ -30,31 +30,31 @@ export default function Page() {
   const services = [
     {
       title: "Email Marketing",
-      image: "/icons/Email Marketing.png",
+      image: "/icons/email-marketing.png",
       description:
         "Email marketing is a digital marketing strategy that involves sending emails to a group of recipients with the goal of promoting services, building relationships with customers.",
     },
     {
       title: "Search Engine Optimization",
-      image: "/icons/Search Engine Optimization.png",
+      image: "/icons/search-engine-optimization.png",
       description:
         "Search Engine Optimization (SEO) is a digital marketing strategy and practice aimed at improving a website’s visibility in (SERPs) for specific keywords or phrases.",
     },
     {
       title: "Content Writing",
-      image: "/icons/Content Writing.png",
+      image: "/icons/content-writing.png",
       description:
         "Content writing is the practice of creating written material with the purpose of conveying information, engaging readers, and achieving specific communication goals.",
     },
     {
       title: "Digital Marketing Strategy",
-      image: "/icons/Digital Marketing Strategy.png",
+      image: "/icons/digital-marketing-strategy.png",
       description:
         "A digital marketing strategy is a comprehensive plan that outlines how a business will use digital channels and platforms to achieve its marketing and business objectives. It can help businesses reach their target effectively.",
     },
     {
       title: "Web Development",
-      image: "/icons/Web development.png",
+      image: "/icons/web-development.png",
       description:
         "Web design and web development are two distinct but closely related disciplines that work together to create functional and visually appealing websites. Both works together to make final look.",
     },
@@ -67,9 +67,9 @@ export default function Page() {
   ];
 
   const Digitalexp = [
-    { title: "Portfolio Website", img: "/Web-design-1.jpeg" },
-    { title: "E-Commerce Website", img: "/web-designs-2.jpeg" },
-    { title: "Shopify Stores", img: "/web-design-3.jpeg" },
+    { title: "Portfolio Website", img: "/images/services/web-design/portfolio-website-example.webp" },
+    { title: "E-Commerce Website", img: "/images/services/web-design/ecommerce-website-example.webp" },
+    { title: "Shopify Stores", img: "/images/services/web-design/shopify-website-example.webp" },
   ];
 
   const clientsuccess = [
@@ -157,7 +157,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/business-growth.png"
+                          src="/images/services/web-design/business-growth-illustration.webp"
                           alt="Business growth illustration"
                           fill
                           className="object-cover"
@@ -169,7 +169,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/business website design.png"
+                          src="/images/services/web-design/business-website-design.webp"
                           alt="Business website design"
                           fill
                           className="object-cover"
@@ -181,7 +181,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-6 sm:mt-16 ">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/creative web design.png"
+                          src="/images/services/web-design/creative-web-design.webp"
                           alt="Creative web design showcase"
                           fill
                           className="object-cover"
@@ -244,8 +244,8 @@ export default function Page() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-purple-500 blur-2xl opacity-30 rounded-3xl"></div>
 
                   <Image
-                    src="/services-3.2.jpeg"
-                    alt="Digital Services"
+                    src="/images/services/web-design/digital-solutions-showcase.webp"
+                    alt="Responsive web design and digital solutions showcase"
                     width={900}
                     height={600}
                     priority
@@ -444,8 +444,8 @@ export default function Page() {
         bg-white shadow-lg flex items-center justify-center"
                   >
                     <Image
-                      src="/icons/Success.png" // ✔ success icon image
-                      alt="Success"
+                      src="/icons/success.png" // ✔ success icon image
+                      alt=""
                       width={35}
                       height={35}
                       className="h-15 w-15"

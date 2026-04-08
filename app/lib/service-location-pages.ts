@@ -100,13 +100,13 @@ const serviceTemplates: ServiceTemplate[] = [
     slug: "printing-products",
     name: "Printing Products",
     routeLabel: "Printing Products",
-    basePath: "/services/Printing-Product",
+    basePath: "/services/printing-products",
     badgeLabel: "Printing Services",
-    image: "/Hotels-menu.png",
+    image: "/images/services/printing/hotel-menu-printing.webp",
     heroImages: [
-      "/Section-1-About-2.jpg",
-      "/Hotels-menu.png",
-      "/custom calendar.png",
+      "/images/shared/printing-materials-showcase.webp",
+      "/images/services/printing/hotel-menu-printing.webp",
+      "/images/services/printing/custom-calendar-printing.webp",
     ],
     keywords: [
       "printing products",
@@ -120,25 +120,25 @@ const serviceTemplates: ServiceTemplate[] = [
         title: "Business Cards and Handouts",
         description:
           "Sharp everyday print materials built for networking, events, sales meetings, and front-desk distribution.",
-        image: "/Services-1.jpeg",
+        image: "/images/services/printing/printing-products-service.webp",
       },
       {
         title: "Brochures and Flyers",
         description:
           "Marketing pieces designed for promotions, launches, and local awareness campaigns with repeat-order flexibility.",
-        image: "/Section-1-About-2.jpg",
+        image: "/images/shared/printing-materials-showcase.webp",
       },
       {
         title: "Menus and Sales Sheets",
         description:
           "Practical branded print layouts for restaurants, service businesses, and in-person customer communication.",
-        image: "/Hotels-menu.png",
+        image: "/images/services/printing/hotel-menu-printing.webp",
       },
       {
         title: "Banners and Event Print",
         description:
           "Large-format print options that help promotions, pop-ups, trade events, and storefront campaigns stand out.",
-        image: "/Services-3.jpeg",
+        image: "/images/services/signage/signage-service.webp",
       },
     ],
     benefits: [
@@ -204,13 +204,13 @@ const serviceTemplates: ServiceTemplate[] = [
     slug: "signage",
     name: "Signage",
     routeLabel: "Signage Services",
-    basePath: "/services/Signage",
+    basePath: "/services/signage",
     badgeLabel: "Signage Services",
-    image: "/Signage-hero.jpeg",
+    image: "/images/services/signage/signage-services-hero.webp",
     heroImages: [
-      "/yard sign marketing.png",
-      "/custom neon signage.png",
-      "/signage LED.png",
+      "/images/services/signage/yard-sign-marketing.webp",
+      "/images/services/signage/custom-neon-signage.webp",
+      "/images/services/signage/led-signage.webp",
     ],
     keywords: [
       "signage services",
@@ -224,25 +224,25 @@ const serviceTemplates: ServiceTemplate[] = [
         title: "Storefront Signage",
         description:
           "Visible signage built to improve first impressions and help local customers identify your business quickly.",
-        image: "/Services-3.jpeg",
+        image: "/images/services/signage/signage-service.webp",
       },
       {
         title: "Window Graphics and Lettering",
         description:
           "Branded graphics that turn glass frontage into useful promotional and directional space.",
-        image: "/Window Graphics.png",
+        image: "/images/services/signage/window-graphics-example.webp",
       },
       {
         title: "Vehicle Graphics and Wraps",
         description:
           "Mobile branding for service vehicles, fleets, and business owners who need visibility beyond the storefront.",
-        image: "/Car Wrap.png",
+        image: "/images/services/signage/car-wrap-signage.webp",
       },
       {
         title: "Event and Display Signage",
         description:
           "Banners, stands, and display pieces that support launches, promotions, and high-traffic local events.",
-        image: "/Services-2.jpeg",
+        image: "/images/services/direct-mail/direct-mail-service.webp",
       },
     ],
     benefits: [
@@ -308,13 +308,13 @@ const serviceTemplates: ServiceTemplate[] = [
     slug: "direct-mail-services",
     name: "Direct Mail Services",
     routeLabel: "Direct Mail Services",
-    basePath: "/services/Direct-MaIilintg",
+    basePath: "/services/direct-mailing",
     badgeLabel: "Direct Mail Services",
-    image: "/direct mail marketing.png",
+    image: "/images/services/direct-mail/direct-mail-marketing.webp",
     heroImages: [
-      "/direct mail marketing.png",
-      "/mailing documentation.png",
-      "/print design.png",
+      "/images/services/direct-mail/direct-mail-marketing.webp",
+      "/images/services/direct-mail/mailing-documentation.webp",
+      "/images/services/direct-mail/print-design-example.webp",
     ],
     keywords: [
       "direct mail services",
@@ -328,25 +328,25 @@ const serviceTemplates: ServiceTemplate[] = [
         title: "Design and Print Coordination",
         description:
           "Mail pieces are planned as part of one workflow so messaging, design, and print production stay aligned.",
-        image: "/Services-2.jpeg",
+        image: "/images/services/direct-mail/direct-mail-service.webp",
       },
       {
         title: "Route-Based Campaign Support",
         description:
           "Useful when you want to reach neighborhoods, service areas, or defined delivery zones with a focused offer.",
-        image: "/direct mail marketing.png",
+        image: "/images/services/direct-mail/direct-mail-marketing.webp",
       },
       {
         title: "Mail Preparation Workflow",
         description:
           "Bundling, paperwork, and preparation steps are organized so the campaign is ready for the mailing process.",
-        image: "/mailing documentation.png",
+        image: "/images/services/direct-mail/mailing-documentation.webp",
       },
       {
         title: "Promotional Mailers and Inserts",
         description:
           "Cards, flyers, and campaign pieces built to support outreach, retention, and local offer visibility.",
-        image: "/print design.png",
+        image: "/images/services/direct-mail/print-design-example.webp",
       },
     ],
     benefits: [
@@ -414,13 +414,13 @@ const serviceTemplates: ServiceTemplate[] = [
     slug: "web-design",
     name: "Web Design",
     routeLabel: "Web Design Services",
-    basePath: "/services/Web-Design",
+    basePath: "/services/web-design",
     badgeLabel: "Web Design Services",
-    image: "/business website design.png",
+    image: "/images/services/web-design/business-website-design.webp",
     heroImages: [
-      "/business-growth.png",
-      "/business website design.png",
-      "/creative web design.png",
+      "/images/services/web-design/business-growth-illustration.webp",
+      "/images/services/web-design/business-website-design.webp",
+      "/images/services/web-design/creative-web-design.webp",
     ],
     keywords: [
       "web design services",
@@ -434,25 +434,25 @@ const serviceTemplates: ServiceTemplate[] = [
         title: "Responsive Business Websites",
         description:
           "Sites built to look polished and work clearly across mobile, tablet, and desktop devices.",
-        image: "/business website design.png",
+        image: "/images/services/web-design/business-website-design.webp",
       },
       {
         title: "Service and Lead Pages",
         description:
           "Conversion-focused page structures that make it easier for visitors to understand the offer and take the next step.",
-        image: "/Web-design-1.jpeg",
+        image: "/images/services/web-design/portfolio-website-example.webp",
       },
       {
         title: "Brand-Led Visual Direction",
         description:
           "Layouts and content blocks that align the website with the same look and message used in print and signage.",
-        image: "/web-designs-2.jpeg",
+        image: "/images/services/web-design/ecommerce-website-example.webp",
       },
       {
         title: "Growth-Oriented Structure",
         description:
           "Web builds planned around future content, service expansion, and stronger local search performance.",
-        image: "/web-design-3.jpeg",
+        image: "/images/services/web-design/shopify-website-example.webp",
       },
     ],
     benefits: [
@@ -519,13 +519,13 @@ const serviceTemplates: ServiceTemplate[] = [
     slug: "seo-services",
     name: "SEO Services",
     routeLabel: "SEO Services",
-    basePath: "/services/SEO",
+    basePath: "/services/seo",
     badgeLabel: "SEO Services",
-    image: "/seo-services-2.jpeg",
+    image: "/images/services/seo/seo-services-hero.webp",
     heroImages: [
-      "/direct mail marketing.png",
-      "/seo-services-2.jpeg",
-      "/Section-1-About-2.jpg",
+      "/images/services/direct-mail/direct-mail-marketing.webp",
+      "/images/services/seo/seo-services-hero.webp",
+      "/images/shared/printing-materials-showcase.webp",
     ],
     keywords: [
       "seo services",
@@ -539,25 +539,25 @@ const serviceTemplates: ServiceTemplate[] = [
         title: "Technical SEO",
         description:
           "Indexing, crawlability, metadata, and page-level clarity that help search engines understand the site correctly.",
-        image: "/icons/Technical SEO.png",
+        image: "/icons/technical-seo.png",
       },
       {
         title: "On-Page Optimization",
         description:
           "Clearer page targeting, stronger headings, better copy structure, and improved service relevance.",
-        image: "/icons/On-Page Optimization.png",
+        image: "/icons/on-page-optimization.png",
       },
       {
         title: "Local SEO Support",
         description:
           "Location-aware targeting, local intent content, and cleaner signals that support visibility in relevant service areas.",
-        image: "/icons/Local SEO.png",
+        image: "/icons/local-seo.png",
       },
       {
         title: "Tracking and Reporting",
         description:
           "Monitoring rankings, crawl behavior, and site changes so SEO decisions stay tied to measurable progress.",
-        image: "/icons/Tracking & Reporting.png",
+        image: "/icons/tracking-reporting.png",
       },
     ],
     benefits: [

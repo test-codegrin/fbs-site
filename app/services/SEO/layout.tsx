@@ -5,13 +5,13 @@ import { buildPageMetadata } from "@/app/lib/seo";
 import { getRequestBaseUrl } from "@/app/lib/request-url";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildPageMetadata("/services/SEO", await getRequestBaseUrl());
+  return buildPageMetadata("/services/seo", await getRequestBaseUrl());
 }
 
 export default function SeoLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <RouteStructuredData path="/services/SEO" />
+      <RouteStructuredData path="/services/seo" />
       {children}
     </>
   );

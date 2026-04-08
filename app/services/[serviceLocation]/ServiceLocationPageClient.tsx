@@ -137,7 +137,7 @@ export default function ServiceLocationPageClient({
                         <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                           <Image
                             src={page.service.heroImages[2]}
-                            alt={`${page.service.routeLabel} campaign materials`}
+                            alt={`${page.service.routeLabel} visual example for ${page.location.city}, ${page.location.stateCode}`}
                             fill
                             className="object-cover"
                           />

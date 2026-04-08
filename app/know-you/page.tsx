@@ -259,8 +259,8 @@ export default function Page() {
                         "
               >
                 <Image
-                  src="/Knowyouimg1.jpg"
-                  alt="Printing Service"
+                  src="/images/know-your-signs/know-your-signs-hero.webp"
+                  alt="FBS Prints signage gallery preview"
                   fill
                   priority
                   className="object-cover rounded-t-[32px] lg:rounded-r-[32px] lg:rounded-t-none"
@@ -278,8 +278,8 @@ export default function Page() {
             {/* MAP 1 */}
             <div className="relative aspect-[29/10] w-full sm:block hidden">
               <Image
-                src="/Scene-4-01.jpg"
-                alt="City Map 1"
+                src="/images/know-your-signs/signage-map-scene-1.webp"
+                alt="Signage installation coverage map overview"
                 fill
                 className="object-contain bg-white "
               />
@@ -294,8 +294,8 @@ export default function Page() {
             {/* MAP 2 */}
             <div className="relative aspect-[29/10] w-full sm:block hidden">
               <Image
-                src="/Scene-4-02.jpg"
-                alt="City Map 2"
+                src="/images/know-your-signs/signage-map-scene-2.webp"
+                alt="Business sign type and service area map overview"
                 fill
                 className="object-contain bg-white"
               />

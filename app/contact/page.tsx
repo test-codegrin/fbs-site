@@ -146,7 +146,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-16">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/business-communication-office.png"
+                          src="/images/contact/business-communication-office.webp"
                           alt="Business communication workspace"
                           fill
                           className="object-cover"
@@ -158,8 +158,8 @@ export default function Page() {
                     <div className="col-span-1 space-y-4 sm:space-y-6 sm:mt-40">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-2">
                         <Image
-                          src="/Conatct.jpeg"
-                          alt="Customer contact support"
+                          src="/images/contact/contact-support-hero.webp"
+                          alt="FBS Prints customer support representative"
                           fill
                           className="object-fix"
                         />
@@ -170,7 +170,7 @@ export default function Page() {
                     <div className="col-span-1 space-y-6 sm:mt-16 ">
                       <div className="rounded-2xl aspect-square overflow-hidden relative float-1">
                         <Image
-                          src="/customer support team.png"
+                          src="/images/contact/customer-support-team.webp"
                           alt="Customer support team"
                           fill
                           className="object-cover"
@@ -274,7 +274,7 @@ export default function Page() {
         {/* Section - 3 */}
         <section className=" section-padding mx-auto">
           <Image
-            src="/globe.png"
+            src="/images/contact/global-business-illustration.webp"
             alt="Global business illustration"
             width={1500}
             height={500}

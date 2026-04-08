@@ -44,7 +44,7 @@ export default function Navbar() {
           {/* LOGO */}
           <Link href="/" aria-label="FBS Prints home">
             <Image
-              src="/FBS-LOGO.png"
+              src="/images/brand/fbs-prints-logo.webp"
               alt="FBS Prints logo"
               width={160}
               height={60}
@@ -83,11 +83,11 @@ export default function Navbar() {
                 ${desktopServiceOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
               >
                 {[
-                  ["Printing Product", "/services/Printing-Product"],
-                  ["Signage", "/services/Signage"],
-                  ["Direct Mailing", "/services/Direct-MaIilintg"],
-                  ["Web Design", "/services/Web-Design"],
-                  ["SEO", "/services/SEO"],
+                  ["Printing Product", "/services/printing-products"],
+                  ["Signage", "/services/signage"],
+                  ["Direct Mailing", "/services/direct-mailing"],
+                  ["Web Design", "/services/web-design"],
+                  ["SEO", "/services/seo"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link href={href} className={dropdownLinkClass(href)}>
@@ -108,7 +108,7 @@ export default function Navbar() {
           {/* DESKTOP RIGHT */}
           <div className="hidden lg:flex items-center gap-3">
             <Image
-              src="/100-percent.gif"
+              src="/images/brand/one-hundred-percent-badge.gif"
               alt="100 percent satisfaction badge"
               width={96}
               height={96}
@@ -202,11 +202,11 @@ export default function Navbar() {
                 className={`overflow-hidden transition-all ${serviceOpen ? "max-h-72 pb-3" : "max-h-0"}`}
               >
                 {[
-                  ["Printing Product", "/services/Printing-Product"],
-                  ["Signage", "/services/Signage"],
-                  ["Direct Mailing", "/services/Direct-MaIilintg"],
-                  ["Web Design", "/services/Web-Design"],
-                  ["SEO", "/services/SEO"],
+                  ["Printing Product", "/services/printing-products"],
+                  ["Signage", "/services/signage"],
+                  ["Direct Mailing", "/services/direct-mailing"],
+                  ["Web Design", "/services/web-design"],
+                  ["SEO", "/services/seo"],
                 ].map(([label, href]) => (
                   <Link
                     key={href}
