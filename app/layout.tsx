@@ -33,6 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: homeMetadata.twitter,
     category: "business",
     referrer: "origin-when-cross-origin",
+    verification: {
+      google: "IKMOipJylldwdtghGqF1-RJ0lXH4mPxw6CxUqMs9e_c",
+    },
     icons: {
       icon: "/FBS.ico",
       shortcut: "/FBS.ico",
